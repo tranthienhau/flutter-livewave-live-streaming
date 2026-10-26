@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, height=852, initial-scale=1.0">
+  <title>Livewave - Send Gift</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Sora', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#8E4BC7',
+              fill: '#8A43C5',
+              pressed: '#7D42AF',
+              tint: '#EEE4F7',
+            },
+            support: {
+              pistachio: '#A8D672',
+              strong: '#6EA22E',
+            },
+            dark: {
+              overlay: 'rgba(22, 12, 31, 0.65)',
+              text: '#160C1F',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Sora', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #160C1F;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .screen-container {
+      width: 393px;
+      height: 852px;
+      position: relative;
+      overflow: hidden;
+      background-color: #160C1F;
+    }
+    .sheet-shadow {
+      box-shadow: 0 -8px 32px rgba(22, 12, 31, 0.28);
+    }
+  </style>
+</head>
+<body>
+
+<div class="screen-container relative flex flex-col justify-between select-none">
+  <!-- Live Stream Background (dimmed photo of woman singing with guitar) -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://lh3.googleusercontent.com/aida/AEtjO1UempZ56O1a31cMiIhk29lbrdAj9vKzyPgeSC7qaHLAdF2jqpDTOVnisn4S-iQ6032PoJXq0uXBBIGCgxCBujMA-FD3phCQsW_sOJZoABc8OZXQgzM_jimdbp0Vd_7AZFJtSevGdmWG4p6ZfzQXHelImG3SrHSj7Sw_ZAQocwcmNZnM39LJnWtuJdvvd4i_NNF2LrPvA_gzRMq7WQrOsmSB9hkheKK27cZluIx_yHU-d4rZ4ZvAnHJcfdk" alt="Live Streamer" class="w-full h-full object-cover">
+    <!-- Dark dimmed overlay -->
+    <div class="absolute inset-0 bg-[#160C1F]/65 backdrop-blur-[2px]"></div>
+  </div>
+
+  <!-- Top Live Header bar (Stream Info & Controls visible above sheet) -->
+  <div class="relative z-10 pt-12 px-5 flex items-center justify-between">
+    <!-- Streamer Tag -->
+    <div class="flex items-center gap-2.5 bg-[#160C1F]/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A" alt="Lena Park" class="w-7 h-7 rounded-full object-cover ring-1 ring-white/30">
+      <div>
+        <p class="text-white text-[13px] font-semibold leading-tight">Lena Park</p>
+        <p class="text-white/70 text-[11px] font-medium leading-none">Acoustic covers</p>
+      </div>
+    </div>
+
+    <!-- Live & Viewers badges -->
+    <div class="flex items-center gap-2">
+      <span class="flex items-center gap-1.5 bg-[#DC2626] text-white text-[12px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+        LIVE
+      </span>
+      <span class="flex items-center gap-1 bg-[#160C1F]/50 backdrop-blur-md text-white text-[12px] font-medium px-2.5 py-1 rounded-full border border-white/10">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        2,481
+      </span>
+    </div>
+  </div>
+
+  <!-- Live Stream floating chat snippet in upper background -->
+  <div class="relative z-10 px-5 space-y-2 mt-auto mb-3 pointer-events-none opacity-90">
+    <div class="flex items-center gap-2 max-w-[280px] bg-[#160C1F]/55 backdrop-blur-md rounded-[14px] p-2 border border-white/10">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1X5VCC8ynqduZDzPUWI6oe7gv5pzqub1nyxASlq8YugtDmGviaPP_gFM6UOIPPdXIb7GL_J_iZmWnlPj06vXSmNXg__9nSWd1j29OYhmVEJr7zvRXxEBF5IMO2wXHHPryInVnv2BY5aVbC2tL2AS3UL6sNPVJ6qmdSkkb9SZ87OSni5A9pGd0BGaVMBzK7tLvUgPadua3tq1Yvt03ilh98VC8w-QzYHDMYxNbo3Qps8kbU48BoE8wzwtQ" class="w-6 h-6 rounded-full object-cover" alt="Aiko">
+      <span class="text-white text-[13px]"><span class="font-semibold text-white/90">Aiko:</span> your guitar tone is stunning tonight ✨</span>
+    </div>
+    <div class="flex items-center gap-2 max-w-[260px] bg-[#160C1F]/55 backdrop-blur-md rounded-[14px] p-2 border border-white/10">
+      <img src="https://lh3.googleusercontent.com/aida/AEtjO1UEr_YIiG521zh1IxZTvgE4zRrMuN36HtcVKVB7K-VjQnChB1UP5OJje41CxSoTSvaZmguyANv9iyCuxwQ7zXBU2zIqUbF1UoQqQbRWehCj8WUC95k0WIbdaBnhbT79hlJT30lvxYjLDQlujPDfZbfEY6UDn9OhDK0rXQhlrqyD_lv5ddT6Qtn8NWb-fQY1OlgJfOwzDO9egVF1KSsH9362Qybjn7Gnho4hc54Q4a1SSdEASchMNMENCQ0" class="w-6 h-6 rounded-full object-cover" alt="Marco">
+      <span class="text-white text-[13px]"><span class="font-semibold text-white/90">Marco:</span> sending some love!</span>
+    </div>
+  </div>
+
+  <!-- White Bottom Sheet covering lower ~60% -->
+  <div class="relative z-20 bg-white rounded-t-[24px] sheet-shadow w-full pt-3 pb-8 px-5 flex flex-col">
+    <!-- Grabber Handle -->
+    <div class="w-10 h-1 bg-[#E6DCEF] rounded-full mx-auto mb-3.5"></div>
+
+    <!-- Header Row -->
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-[#160C1F] text-[20px] font-semibold tracking-tight">Send a gift</h2>
+      
+      <!-- Coin Balance & Top Up Link -->
+      <div class="flex items-center gap-2.5">
+        <div class="flex items-center gap-1.5 bg-[#EEE4F7] px-3 py-1 rounded-full">
+          <!-- Flat 2D Coin SVG -->
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" fill="#A8D672" stroke="#6EA22E" stroke-width="1.5"/>
+            <text x="10" y="13.5" font-family="Sora" font-size="9" font-weight="700" fill="#160C1F" text-anchor="middle">C</text>
+          </svg>
+          <span class="text-[#8A43C5] text-[13px] font-semibold tracking-tight">1,250 coins</span>
+        </div>
+        <button class="text-[#8A43C5] hover:text-[#7D42AF] text-[13px] font-semibold">Top up</button>
+      </div>
+    </div>
+
+    <!-- FOCAL: 4 columns x 2 rows Gift Grid -->
+    <div class="grid grid-cols-4 gap-2.5 mb-4">
+      
+      <!-- Gift 1: Rose (1 coin) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors group">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Stem and leaf in pistachio -->
+            <path d="M18 20V32" stroke="#6EA22E" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 25C21 24 24 25.5 25 28C22 28.5 19.5 27 18 25Z" fill="#A8D672" stroke="#6EA22E" stroke-width="1.5" stroke-linejoin="round"/>
+            <!-- Flower petals in brand purple -->
+            <path d="M18 6C13 6 10 10 12 15C13.5 18.5 18 21 18 21C18 21 22.5 18.5 24 15C26 10 23 6 18 6Z" fill="#8E4BC7"/>
+            <path d="M18 8C20 9.5 20.5 12 19 14C17.5 16 16 14.5 16 13C16 11 17.2 9.5 18 8Z" fill="#EEE4F7"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Rose</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">1</span>
+        </div>
+      </button>
+
+      <!-- Gift 2: Heart (5 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <path d="M18 30S6 22 6 13C6 8.5 9.5 5 14 5C16.8 5 18 6.8 18 6.8C18 6.8 19.2 5 22 5C26.5 5 30 8.5 30 13C30 22 18 30 18 30Z" fill="#8E4BC7"/>
+            <!-- Pistachio sparkle accent -->
+            <circle cx="23" cy="11" r="2.5" fill="#A8D672"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Heart</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">5</span>
+        </div>
+      </button>
+
+      <!-- Gift 3: Coffee (10 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Cup body -->
+            <path d="M7 13H25V22C25 26.4 21.4 30 17 30H15C10.6 30 7 26.4 7 22V13Z" fill="#8E4BC7"/>
+            <!-- Handle -->
+            <path d="M25 15H27C29.2 15 31 16.8 31 19C31 21.2 29.2 23 27 23H25" stroke="#8E4BC7" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Steam in pistachio -->
+            <path d="M12 9C12 7 13.5 6 13.5 4" stroke="#A8D672" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18 9C18 7 19.5 6 19.5 4" stroke="#A8D672" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Coffee</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">10</span>
+        </div>
+      </button>
+
+      <!-- Gift 4: Star (25 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Star in pistachio with purple ring detail -->
+            <path d="M18 4L22.1 12.3L31.3 13.7L24.6 20.2L26.2 29.3L18 25L9.8 29.3L11.4 20.2L4.7 13.7L13.9 12.3L18 4Z" fill="#A8D672" stroke="#6EA22E" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="18" cy="18" r="3.5" fill="#8E4BC7"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Star</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">25</span>
+        </div>
+      </button>
+
+      <!-- Gift 5: Mic (50 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Mic head in brand purple -->
+            <rect x="13" y="5" width="10" height="15" rx="5" fill="#8E4BC7"/>
+            <path d="M9 14V17C9 21.97 13.03 26 18 26C22.97 26 27 21.97 27 17V14" stroke="#8E4BC7" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 26V31" stroke="#8E4BC7" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Sound waves in pistachio -->
+            <path d="M6 16C5 17.5 5 19 6 20" stroke="#A8D672" stroke-width="2" stroke-linecap="round"/>
+            <path d="M30 16C31 17.5 31 19 30 20" stroke="#A8D672" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Mic</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">50</span>
+        </div>
+      </button>
+
+      <!-- Gift 6: Rocket (100 coins) - SELECTED STATE (2px #8E4BC7 border & #EEE4F7 tint) -->
+      <button class="relative flex flex-col items-center justify-center p-2.5 rounded-[16px] border-2 border-[#8E4BC7] bg-[#EEE4F7] shadow-sm">
+        <!-- Selected Checkmark Badge -->
+        <div class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[#8E4BC7] flex items-center justify-center text-white shadow">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Rocket Body -->
+            <path d="M26 10C26 10 24 16 19 21L15 17C20 12 26 10 26 10Z" fill="#8E4BC7"/>
+            <path d="M26 10C26 10 21 8.5 15 13L19 17C23.5 11 26 10 26 10Z" fill="#7D42AF"/>
+            <!-- Rocket Wings/Fins in pistachio -->
+            <path d="M12 19L8 20L11 24L15 22L12 19Z" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+            <path d="M17 24L16 28L20 25L17 24Z" fill="#A8D672"/>
+            <!-- Rocket Porthole window -->
+            <circle cx="21" cy="15" r="2.5" fill="#EEE4F7"/>
+            <!-- Exhaust Flame in Pistachio / Light Accent -->
+            <path d="M12 24L7 29C8.5 27 10 27 12 25" stroke="#A8D672" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-[#8A43C5] text-[13px] font-bold leading-none mb-1">Rocket</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#8A43C5] text-[12px] font-bold">100</span>
+        </div>
+      </button>
+
+      <!-- Gift 7: Crown (500 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Crown body in brand purple with pistachio jewels -->
+            <path d="M6 26H30L28 14L22 20L18 9L14 20L8 14L6 26Z" fill="#8E4BC7" stroke="#7D42AF" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="18" cy="8" r="2" fill="#A8D672"/>
+            <circle cx="8" cy="13" r="1.75" fill="#A8D672"/>
+            <circle cx="28" cy="13" r="1.75" fill="#A8D672"/>
+            <rect x="9" y="23" width="18" height="2" rx="1" fill="#EEE4F7"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Crown</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">500</span>
+        </div>
+      </button>
+
+      <!-- Gift 8: Wave (1000 coins) -->
+      <button class="flex flex-col items-center justify-center p-2.5 rounded-[16px] border border-[#E6DCEF] bg-[#F8F4FC] hover:border-[#8E4BC7]/40 transition-colors">
+        <div class="w-11 h-11 flex items-center justify-center mb-1.5">
+          <svg class="w-9 h-9" viewBox="0 0 36 36" fill="none">
+            <!-- Wave badge / Livewave soundwave icon -->
+            <circle cx="18" cy="18" r="14" fill="#8E4BC7"/>
+            <path d="M10 20C12 16 15 16 17 20C19 24 22 24 24 20C25.5 17 27 17 28 19" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M12 16C14 13 16 13 18 16C20 19 22 19 24 16" stroke="#A8D672" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="text-[#160C1F] text-[13px] font-medium leading-none mb-1">Wave</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" fill="#A8D672" stroke="#6EA22E" stroke-width="1"/>
+          </svg>
+          <span class="text-[#756B80] text-[12px] font-semibold">1k</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Quantity Segmented Control Row -->
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-[#54465F] text-[13px] font-medium">Quantity</span>
+      <div class="flex items-center bg-[#F2EBF8] p-1 rounded-full border border-[#E6DCEF]">
+        <!-- x1 (active) -->
+        <button class="px-4 py-1 rounded-full text-[13px] font-semibold bg-white text-[#8A43C5] shadow-xs">
+          x1
+        </button>
+        <!-- x5 -->
+        <button class="px-4 py-1 rounded-full text-[13px] font-medium text-[#756B80] hover:text-[#160C1F] transition-colors">
+          x5
+        </button>
+        <!-- x10 -->
+        <button class="px-4 py-1 rounded-full text-[13px] font-medium text-[#756B80] hover:text-[#160C1F] transition-colors">
+          x10
+        </button>
+      </div>
+    </div>
+
+    <!-- Full-width Primary Action Pill Button -->
+    <button class="w-full bg-[#8A43C5] hover:bg-[#7D42AF] active:scale-[0.98] text-white py-3.5 px-6 rounded-full font-semibold text-[16px] flex items-center justify-center gap-2 shadow-sm transition-all duration-150">
+      <span>Send Rocket</span>
+      <span class="opacity-70">•</span>
+      <span>100 coins</span>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
+

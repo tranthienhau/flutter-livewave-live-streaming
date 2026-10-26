@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Livewave - Home</title>
+<!-- Google Fonts: Sora & Syne -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "control-border": "#AE87B7",
+            "tertiary-fixed": "#ffdf92",
+            "on-primary-fixed": "#2d004f",
+            "warning-text": "#A75906",
+            "primary-fixed-dim": "#dfb7ff",
+            "surface-container-low": "#fbf0fc",
+            "primary-fixed": "#f1daff",
+            "primary-container": "#8e4bc7",
+            "outline": "#7e7383",
+            "danger-text": "#CE2020",
+            "on-background": "#1f1a22",
+            "success-text": "#0E7C3A",
+            "success-fill": "#E3F4E9",
+            "on-tertiary-fixed": "#241a00",
+            "inverse-primary": "#dfb7ff",
+            "support-strong": "#6EA22E",
+            "inverse-on-surface": "#f8eef9",
+            "on-error": "#ffffff",
+            "surface-container": "#f5ebf6",
+            "secondary": "#426910",
+            "outline-variant": "#cfc2d4",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1f1a22",
+            "accent-tint": "#EEE4F7",
+            "text-tertiary": "#756B80",
+            "surface-variant": "#e9dfeb",
+            "surface-tint": "#7f3cb8",
+            "border-hairline": "#E6DCEF",
+            "text-secondary": "#54465F",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "on-secondary-fixed": "#0f2000",
+            "surface-dim": "#e1d7e2",
+            "live-red": "#DC2626",
+            "on-primary-container": "#f9e9ff",
+            "text-primary": "#160C1F",
+            "surface-bright": "#fff7fd",
+            "background": "#F8F4FC",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "surface-container-high": "#efe5f0",
+            "surface-alt": "#F2EBF8",
+            "on-tertiary-fixed-variant": "#594400",
+            "accent-pressed": "#7D42AF",
+            "warning-fill": "#FAEFE1",
+            "tertiary-fixed-dim": "#e8c25c",
+            "tertiary-container": "#cba744",
+            "primary": "#742fac",
+            "on-primary-fixed-variant": "#661e9e",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary": "#755b00",
+            "accent-fill": "#8A43C5",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#503d00",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#466d15",
+            "inverse-surface": "#342e37",
+            "secondary-fixed-dim": "#a7d471",
+            "on-surface-variant": "#4c4452",
+            "danger-fill": "#FBE5E5",
+            "secondary-container": "#bfee87",
+            "surface-container-highest": "#e9dfeb",
+            "secondary-fixed": "#c2f18a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "margin": "20px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "space-md": "12px"
+          },
+          "fontFamily": {
+            "caption": ["Sora"],
+            "title": ["Sora"],
+            "label": ["Sora"],
+            "body": ["Sora"],
+            "display": ["Syne"]
+          },
+          "fontSize": {
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(22, 12, 31, 0.04), 0 8px 24px rgba(22, 12, 31, 0.06);
+    }
+    /* Safe padding classes for mobile viewport */
+    .pt-safe {
+      padding-top: max(14px, env(safe-area-inset-top));
+    }
+    .pb-safe {
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+    /* Hide scrollbars while maintaining scroll functionality */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Container Frame (393px width) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-24 shadow-2xl overflow-x-hidden">
+<!-- Top App Bar / Header -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-margin pt-safe pb-3 flex items-center justify-between transition-shadow">
+<!-- Left: User Profile & Identity -->
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-accent-tint shrink-0">
+<img alt="Maya Chen profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XPQQ2q8t-klPXo736dHVYaVQJ-MKLuR2t4it3VhwmJqIoLScaUdvdI3sb2qJDSVC_8ETBKq9VkpAIavkbP4XoxRJhoyEfaJlD2hRVZckE0jtxTpqI0MhGjeb8hlL9OKWAom1Ar2MiJUpFF6Tq11yXjtNtHxQeShTOe4iRV1hlOUYWAUYmBgSak2M96WX6v7RUTyYPrwNIRRCGUa3jPBkOmVig4pHOlE9T0v4p1dfLnK4N2-l65KIFly6M"/>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-title text-title font-bold text-text-primary tracking-tight">Hi, Maya</span>
+<img alt="Livewave wave badge" class="w-5 h-5 rounded-full object-cover shrink-0 ml-0.5" src="https://lh3.googleusercontent.com/aida/AEtjO1VY-kEhzb24K6TEt7mG69hR9ZtQ1j9KfCTTwljf807c9haJqDNMly9HYu2jIKH2kVmPa19qhE_B0xnMbcfMM2ilH9Uy6a6uRNIn0UxC1ekel_ZI69rqDMnlU3MTR9aPDn8DHGreySeet_Hb4LeQjGqYD4deCsyhCiSrOQSfMi3gJQIS43P5kivnmVpanZbSOfzyCjg7uCRl8bKMNBIVjhJVYvrcMeSxNz_a7ERcFjpvOXn5SfUWpsOG6w"/>
+</div>
+</div>
+<!-- Right: Action Buttons (Search & Notifications) -->
+<div class="flex items-center gap-2">
+<button aria-label="Search" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all duration-150 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-live-red rounded-full ring-2 ring-surface"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="px-margin flex flex-col gap-6 pt-2">
+<!-- Live Status Feed Filter / Pill Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<button class="bg-accent-fill text-white rounded-full px-4 py-1.5 font-label text-caption font-semibold shadow-sm shrink-0 active:scale-95 transition-transform">
+          Following
+        </button>
+<button class="bg-accent-tint text-primary hover:bg-surface-container rounded-full px-4 py-1.5 font-label text-caption font-semibold shrink-0 active:scale-95 transition-transform">
+          Popular
+        </button>
+<button class="bg-accent-tint text-primary hover:bg-surface-container rounded-full px-4 py-1.5 font-label text-caption font-semibold shrink-0 active:scale-95 transition-transform">
+          Nearby
+        </button>
+<button class="bg-accent-tint text-primary hover:bg-surface-container rounded-full px-4 py-1.5 font-label text-caption font-semibold shrink-0 active:scale-95 transition-transform">
+          Creative
+        </button>
+</div>
+<!-- Centered Empty State Card -->
+<section class="w-full bg-surface rounded-[20px] border border-border-hairline p-5 soft-card-shadow flex flex-col items-center text-center">
+<!-- Photo Thumbnail: Calm home desk studio -->
+<div class="w-full aspect-[16/10] rounded-[16px] overflow-hidden relative mb-5 bg-surface-alt">
+<img alt="Quiet home studio desk with smartphone stand and unlit ring light" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1a_rTQZUv6e7vwFucip4WqdPpMQHhMwDyF5ViIpNL1FeLJqvThuhicdF1GLu1EXAByWxiX8XQtme3QglsghF9LvSZcOve98GCBAi6bBr8v3U9Cwxb508f5Tdv554xlOG4Fo9Ze1xg2JHbou2XlgBR1r9Lnbb-PXXauHhTBq6_ZZoz1Yv1M4UcwZHWXBq3rEHx3ZHG4y5RUf271uXaCNVMLObiW9AVM_lZnDo-6AiP_vCwfOAMYg6bhzydKLdxh79Tph5cjus2XM8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-text-primary/20 to-transparent pointer-events-none"></div>
+<!-- Subtle status badge on media -->
+<div class="absolute bottom-3 left-3 bg-video-overlay text-white px-3 py-1 rounded-full text-[12px] font-medium backdrop-blur-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>Studio Offline</span>
+</div>
+</div>
+<!-- Headline & Description -->
+<h2 class="font-title text-title text-text-primary mb-1.5">
+          Nobody you follow is live
+        </h2>
+<p class="font-body text-body text-text-secondary max-w-[280px] mb-6">
+          Follow creators to get notified when they go live.
+        </p>
+<!-- Primary Pill Action Button -->
+<button class="w-full rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-95 transition-all duration-150 py-3.5 px-6 text-white font-label font-semibold text-body shadow-sm flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-45" data-icon="explore">explore</span>
+<span>Explore live streams</span>
+</button>
+</section>
+<!-- Suggested Creators Section -->
+<section class="flex flex-col gap-3">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-baseline gap-2">
+<h3 class="font-title text-[18px] font-semibold text-text-primary">
+              Suggested creators
+            </h3>
+<span class="font-caption text-caption text-text-tertiary">3 active now</span>
+</div>
+<button class="font-caption text-caption font-semibold text-primary hover:text-accent-pressed transition-colors">
+            See all
+          </button>
+</div>
+<!-- Card Container with Creator Rows -->
+<div class="w-full bg-surface rounded-[20px] border border-border-hairline soft-card-shadow divide-y divide-border-hairline overflow-hidden">
+<!-- Creator Row 1: Lena Park -->
+<article class="p-4 flex items-center justify-between gap-3 hover:bg-surface-bright transition-colors duration-150">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-border-hairline shrink-0">
+<img alt="Lena Park portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-[15px] font-semibold text-text-primary truncate">Lena Park</span>
+<div class="flex items-center gap-1.5 font-caption text-caption text-text-tertiary">
+<span class="text-primary font-medium">Music</span>
+<span>•</span>
+<span>42.8K followers</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-white border-[1.5px] border-primary-container text-accent-fill hover:bg-accent-tint active:scale-95 transition-all duration-150 font-label font-semibold text-[13px] py-1.5 px-4 rounded-full">
+              Follow
+            </button>
+</article>
+<!-- Creator Row 2: Aiko Tan -->
+<article class="p-4 flex items-center justify-between gap-3 hover:bg-surface-bright transition-colors duration-150">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-border-hairline shrink-0">
+<img alt="Aiko Tan portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X5VCC8ynqduZDzPUWI6oe7gv5pzqub1nyxASlq8YugtDmGviaPP_gFM6UOIPPdXIb7GL_J_iZmWnlPj06vXSmNXg__9nSWd1j29OYhmVEJr7zvRXxEBF5IMO2wXHHPryInVnv2BY5aVbC2tL2AS3UL6sNPVJ6qmdSkkb9SZ87OSni5A9pGd0BGaVMBzK7tLvUgPadua3tq1Yvt03ilh98VC8w-QzYHDMYxNbo3Qps8kbU48BoE8wzwtQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-[15px] font-semibold text-text-primary truncate">Aiko Tan</span>
+<div class="flex items-center gap-1.5 font-caption text-caption text-text-tertiary">
+<span class="text-primary font-medium">Art</span>
+<span>•</span>
+<span>18.3K followers</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-white border-[1.5px] border-primary-container text-accent-fill hover:bg-accent-tint active:scale-95 transition-all duration-150 font-label font-semibold text-[13px] py-1.5 px-4 rounded-full">
+              Follow
+            </button>
+</article>
+<!-- Creator Row 3: Sam Okafor -->
+<article class="p-4 flex items-center justify-between gap-3 hover:bg-surface-bright transition-colors duration-150">
+<div class="flex items-center gap-3.5 min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-border-hairline shrink-0">
+<img alt="Sam Okafor portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UXNE6YbtXvbfkShe5awbjgSJqP48-ofQeTJt3SNNVTRLNfWetIfbbENUibAGnz23sTEXM-ut3bQP1v4RfamRVxvF-pMYGg3g3oVANu4QYH-tqftqGs5SlIOe1S7dQYPBBIxqyJutBdPQecZMlmXsKG8A_yehWSDdYc_Whjx371t7-OwXY-4MFV1-LhL8HTOnOxrp1chDdjMBCGzV-sTYxVwZug13jkL1iG6FzfAe4a6v_J8_Ok9R2Wbg"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-[15px] font-semibold text-text-primary truncate">Sam Okafor</span>
+<div class="flex items-center gap-1.5 font-caption text-caption text-text-tertiary">
+<span class="text-primary font-medium">Fitness</span>
+<span>•</span>
+<span>95.1K followers</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-white border-[1.5px] border-primary-container text-accent-fill hover:bg-accent-tint active:scale-95 transition-all duration-150 font-label font-semibold text-[13px] py-1.5 px-4 rounded-full">
+              Follow
+            </button>
+</article>
+</div>
+</section>
+<!-- Atmospheric Community Insight / Onboarding Prompt -->
+<section class="w-full bg-accent-tint/60 rounded-[18px] p-4 flex items-center gap-3.5 border border-border-hairline mb-2">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-label text-label font-semibold text-text-primary leading-tight">Sync your contacts</h4>
+<p class="font-caption text-[12px] text-text-secondary leading-snug">Discover friends and coworkers streaming in your area.</p>
+</div>
+</section>
+</div>
+<!-- Bottom Tab Navigation Bar (Fixed 5 Destinations) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full max-w-[393px] mx-auto z-50 h-16 pb-safe bg-surface border-t border-border-hairline flex items-center justify-around px-2">
+<!-- Tab 1: Home (Active state) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 active:scale-95 transition-transform" href="#home">
+<span class="material-symbols-outlined text-[24px]" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption text-[12px] leading-tight mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Explore -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 active:scale-95" href="#explore">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] leading-tight mt-0.5">Explore</span>
+</a>
+<!-- Tab 3: Go Live (Centered Distinctive CTA Badge) -->
+<a class="flex flex-col items-center justify-center py-1 active:scale-95 transition-transform group" href="#golive">
+<div class="w-10 h-10 rounded-full bg-accent-fill group-hover:bg-accent-pressed flex items-center justify-center shadow-md -mt-3 mb-0.5 transition-colors">
+<span class="material-symbols-outlined text-white text-[22px]" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] leading-tight text-text-tertiary">Go Live</span>
+</a>
+<!-- Tab 4: Wallet -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 active:scale-95" href="#wallet">
+<span class="material-symbols-outlined text-[24px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] leading-tight mt-0.5">Wallet</span>
+</a>
+<!-- Tab 5: Profile -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 active:scale-95" href="#profile">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-[12px] leading-tight mt-0.5">Profile</span>
+</a>
+</nav>
+</main>
+</body></html>

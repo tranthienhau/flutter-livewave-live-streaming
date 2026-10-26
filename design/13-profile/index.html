@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livewave - Profile</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Sora & Syne -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#342e37",
+            "surface-container": "#f5ebf6",
+            "control-border": "#AE87B7",
+            "on-tertiary-fixed-variant": "#594400",
+            "support-strong": "#6EA22E",
+            "secondary-fixed": "#c2f18a",
+            "text-tertiary": "#756B80",
+            "secondary-container": "#bfee87",
+            "success-text": "#0E7C3A",
+            "border-hairline": "#E6DCEF",
+            "surface-bright": "#fff7fd",
+            "inverse-on-surface": "#f8eef9",
+            "accent-tint": "#EEE4F7",
+            "surface": "#FFFFFF",
+            "on-primary-fixed": "#2d004f",
+            "on-primary-container": "#f9e9ff",
+            "warning-fill": "#FAEFE1",
+            "tertiary": "#755b00",
+            "tertiary-fixed": "#ffdf92",
+            "tertiary-container": "#cba744",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#241a00",
+            "on-secondary-container": "#466d15",
+            "surface-container-low": "#fbf0fc",
+            "surface-alt": "#F2EBF8",
+            "on-surface": "#1f1a22",
+            "danger-text": "#CE2020",
+            "live-red": "#DC2626",
+            "text-primary": "#160C1F",
+            "on-primary-fixed-variant": "#661e9e",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#efe5f0",
+            "primary-container": "#8e4bc7",
+            "on-secondary-fixed": "#0f2000",
+            "surface-dim": "#e1d7e2",
+            "inverse-primary": "#dfb7ff",
+            "primary-fixed-dim": "#dfb7ff",
+            "surface-variant": "#e9dfeb",
+            "surface-tint": "#7f3cb8",
+            "text-secondary": "#54465F",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "background": "#F8F4FC",
+            "on-tertiary-container": "#503d00",
+            "accent-fill": "#8A43C5",
+            "on-surface-variant": "#4c4452",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "secondary-fixed-dim": "#a7d471",
+            "danger-fill": "#FBE5E5",
+            "on-error-container": "#93000a",
+            "warning-text": "#A75906",
+            "primary-fixed": "#f1daff",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#e8c25c",
+            "outline": "#7e7383",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "accent-pressed": "#7D42AF",
+            "secondary": "#426910",
+            "primary": "#742fac",
+            "outline-variant": "#cfc2d4",
+            "success-fill": "#E3F4E9",
+            "surface-container-highest": "#e9dfeb",
+            "on-secondary": "#ffffff",
+            "on-background": "#1f1a22"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "margin": "20px",
+            "space-sm": "8px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "label": ["Sora", "sans-serif"],
+            "display": ["Syne", "sans-serif"],
+            "body": ["Sora", "sans-serif"],
+            "title": ["Sora", "sans-serif"],
+            "caption": ["Sora", "sans-serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(22,12,31,.04), 0 8px 24px rgba(22,12,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Viewport Wrapper (393px width constraint) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-24 shadow-2xl">
+<!-- Top App Bar / Header -->
+<header class="sticky top-0 z-40 w-full h-14 bg-surface flex items-center justify-between px-margin shadow-sm transition-colors duration-150">
+<div class="flex items-center space-x-2">
+<h1 class="font-title text-title text-text-primary tracking-tight">Profile</h1>
+</div>
+<button aria-label="Settings" class="w-9 h-9 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin pt-4 space-y-5">
+<!-- User Profile Identity Section -->
+<section class="flex flex-col items-center text-center pt-2">
+<div class="relative mb-3">
+<div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-primary-container via-accent-fill to-secondary-container shadow-soft">
+<img alt="Maya Chen" class="w-full h-full object-cover rounded-full border-2 border-surface bg-surface-alt" src="https://lh3.googleusercontent.com/aida/AEtjO1XPQQ2q8t-klPXo736dHVYaVQJ-MKLuR2t4it3VhwmJqIoLScaUdvdI3sb2qJDSVC_8ETBKq9VkpAIavkbP4XoxRJhoyEfaJlD2hRVZckE0jtxTpqI0MhGjeb8hlL9OKWAom1Ar2MiJUpFF6Tq11yXjtNtHxQeShTOe4iRV1hlOUYWAUYmBgSak2M96WX6v7RUTyYPrwNIRRCGUa3jPBkOmVig4pHOlE9T0v4p1dfLnK4N2-l65KIFly6M"/>
+</div>
+<span class="absolute bottom-1 right-1 w-5 h-5 bg-support-strong border-2 border-surface rounded-full flex items-center justify-center shadow-xs" title="Online">
+<span class="w-1.5 h-1.5 bg-surface rounded-full"></span>
+</span>
+</div>
+<h2 class="font-title text-title font-semibold text-text-primary">Maya Chen</h2>
+<p class="font-caption text-caption text-text-tertiary mb-3">@mayalive</p>
+<!-- Edit Profile Secondary Pill Button -->
+<button class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-surface border-[1.5px] border-primary-container text-accent-fill font-caption font-medium hover:bg-accent-tint active:scale-95 transition-all shadow-xs">
+          Edit profile
+        </button>
+</section>
+<!-- Channel Stats Card -->
+<section class="bg-surface rounded-[20px] p-4 shadow-soft">
+<div class="grid grid-cols-3 divide-x divide-border-hairline text-center">
+<div class="flex flex-col items-center">
+<span class="font-title font-bold text-xl text-primary-container">3,210</span>
+<span class="font-caption text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mt-0.5">Followers</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-title font-bold text-xl text-primary-container">184</span>
+<span class="font-caption text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mt-0.5">Following</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-title font-bold text-xl text-primary-container">46</span>
+<span class="font-caption text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mt-0.5">Streams</span>
+</div>
+</div>
+</section>
+<!-- Focal Card 'This week' -->
+<section class="bg-surface rounded-[20px] p-4 shadow-soft">
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption text-[11px] font-semibold text-text-tertiary uppercase tracking-widest">THIS WEEK</span>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-tint text-accent-fill text-[12px] font-medium">
+<span class="material-symbols-outlined text-[15px] text-support-strong" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-text-primary text-[11px] font-semibold">Peak 2,940 viewers</span>
+</div>
+</div>
+<div class="flex items-baseline gap-1.5 mb-4">
+<span class="font-display text-[28px] font-bold text-text-primary leading-none">6.5 h</span>
+<span class="font-body text-label text-text-tertiary font-medium">streamed</span>
+</div>
+<!-- Mini Bar Chart (Mon-Sun) -->
+<div class="pt-2">
+<div class="flex items-end justify-between h-20 px-2 pb-1 gap-2 border-b border-border-hairline">
+<!-- Mon -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 38%;"></div>
+</div>
+<!-- Tue -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 55%;"></div>
+</div>
+<!-- Wed -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 25%;"></div>
+</div>
+<!-- Thu -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 70%;"></div>
+</div>
+<!-- Fri (Peak Bar) -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<div class="w-full max-w-[18px] bg-support-strong rounded-t-md shadow-xs transition-all hover:brightness-105" style="height: 98%;"></div>
+</div>
+<!-- Sat -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 45%;"></div>
+</div>
+<!-- Sun -->
+<div class="flex-1 flex flex-col items-center justify-end h-full">
+<div class="w-full max-w-[18px] bg-secondary-fixed-dim rounded-t-md transition-all hover:opacity-90" style="height: 18%;"></div>
+</div>
+</div>
+<!-- Days of Week labels -->
+<div class="flex justify-between px-2 pt-2 text-[11px] font-caption text-text-tertiary">
+<span class="flex-1 text-center font-medium">M</span>
+<span class="flex-1 text-center font-medium">T</span>
+<span class="flex-1 text-center font-medium">W</span>
+<span class="flex-1 text-center font-medium">T</span>
+<span class="flex-1 text-center font-bold text-support-strong">F</span>
+<span class="flex-1 text-center font-medium">S</span>
+<span class="flex-1 text-center font-medium">S</span>
+</div>
+</div>
+</section>
+<!-- Segmented Navigation Tabs -->
+<section class="pt-1">
+<div class="flex border-b border-border-hairline text-center">
+<!-- Replays Active Tab -->
+<button class="flex-1 pb-2.5 font-label text-label font-semibold text-primary-container relative">
+            Replays
+            <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container rounded-full mx-6"></div>
+</button>
+<!-- Clips Inactive Tab -->
+<button class="flex-1 pb-2.5 font-label text-label font-medium text-text-tertiary hover:text-text-primary transition-colors">
+            Clips
+          </button>
+<!-- Scheduled Inactive Tab -->
+<button class="flex-1 pb-2.5 font-label text-label font-medium text-text-tertiary hover:text-text-primary transition-colors">
+            Scheduled
+          </button>
+</div>
+</section>
+<!-- Replays 2-Column Grid -->
+<section class="grid grid-cols-2 gap-3.5 pt-1">
+<!-- Card 1 -->
+<article class="flex flex-col group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative w-full aspect-[4/5] rounded-[16px] overflow-hidden bg-surface-alt mb-2 shadow-soft">
+<img alt="Cooking &amp; Chatting Pasta Night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue74jc3SwA_vL9ma7AHUWAhyeS1gX7NUhU1BiepliKWwepvoAA4dmZW-ADGSFzY8ygXzp5WySA-nTi_nXjTI_FW0CHA6HWYDoxIu0tqedfHKah7tQoUslZSXyFNM5OerlqUtF0KDx0OP3FYzlp70QuWYoZoMaF83WATu6bxq6uk_mWEOJo8ihkbN4AWvp5NKmy8pkZ3xONZBorXNH391HePA_r1EgNhR4VBvKJX9ngv9HHghqUCizcWik"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-[rgba(22,12,31,0.7)] backdrop-blur-xs text-white text-[12px] font-medium tracking-tight">
+              52:10
+            </div>
+</div>
+<h3 class="font-title text-[14px] font-semibold text-text-primary truncate" title="Cooking &amp; Chatting Pasta Night">
+            Cooking &amp; Chatting Pasta Night
+          </h3>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">8.4K views • 2d ago</p>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative w-full aspect-[4/5] rounded-[16px] overflow-hidden bg-surface-alt mb-2 shadow-soft">
+<img alt="Morning Coffee &amp; Q&amp;A" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XRvzLFzsb7RsLArlIEfgCPELVe_8Wp-rWamdSAGV_rcnrnX68uFZ5EwZevtnro9N24cvwPWgsPGZ45E47NsCPHg3QUP3M0Fd4TJZyxU0Wv3uG941x831tlhecMa_uMKJ2wGR5u9ucXPH7wUiaoLKEtPchhGHymR1o9lxhId4__GZOgKGzTb1Jgg9-6-I7E_XkrMjBOYXzzTHgTymjcd7S2_ZhiQxjmHj8Z4rfpLIx_MgFo5xxsT1KCQg"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-[rgba(22,12,31,0.7)] backdrop-blur-xs text-white text-[12px] font-medium tracking-tight">
+              45:20
+            </div>
+</div>
+<h3 class="font-title text-[14px] font-semibold text-text-primary truncate" title="Morning Coffee &amp; Q&amp;A">
+            Morning Coffee &amp; Q&amp;A
+          </h3>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">5.1K views • 4d ago</p>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative w-full aspect-[4/5] rounded-[16px] overflow-hidden bg-surface-alt mb-2 shadow-soft">
+<img alt="Painting in the Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WPuRdIJEAOL_7VnkgqbWF81JCPHpc1R8ofFHRX1zmYxksjC8j3sYguzLpXl0PF0hI7HVx1ndryM4ltOlNjnBQZcPH59Ck52a7GqIbxF_aJYM2Nf37rzLjdlcFR5O89z3FmtY0nTx1e7iFcMhzHxgaq-S4n7-41D9IoQuY10VTVPGSfADXMtl5Fd-UMvb-wzAZMUEqIwbZf0uRnM3yS3uNln6tu1tPFD4Dx1caPrhmdaqPM_LV1TW0gpg"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-[rgba(22,12,31,0.7)] backdrop-blur-xs text-white text-[12px] font-medium tracking-tight">
+              1:12:04
+            </div>
+</div>
+<h3 class="font-title text-[14px] font-semibold text-text-primary truncate" title="Painting in the Studio">
+            Painting in the Studio
+          </h3>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">9.2K views • 6d ago</p>
+</article>
+<!-- Card 4 -->
+<article class="flex flex-col group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative w-full aspect-[4/5] rounded-[16px] overflow-hidden bg-surface-alt mb-2 shadow-soft">
+<img alt="Late Night City Stroll" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Us1SBKTtfw-jdjzrPHXDTGSq2KHqjmKckSr8vrm3u2WXHNIp-pj_G6H_jdqgUvyLEIxzm-2_37L8y7fq94Mb8w7lrGPR6TVlc1NZuzuCSUt9x_ryO9G_3HaXPwy-lSNgdhKu5WZekYm4Ztv8YGzVdsp6yKOTa82UoH5PmO0AtpBwJ-YQ58fkWuN6N4rP-L59NhTFX56xF7q0ag9uTJnQBfrQFO8hDtMcUTd7leFOg3-SusiXcdtpDtFpA"/>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-[rgba(22,12,31,0.7)] backdrop-blur-xs text-white text-[12px] font-medium tracking-tight">
+              38:15
+            </div>
+</div>
+<h3 class="font-title text-[14px] font-semibold text-text-primary truncate" title="Late Night City Stroll">
+            Late Night City Stroll
+          </h3>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">6.7K views • 1w ago</p>
+</article>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mandatory Shared Component: 5 Tabs, Exact Labels & Icons, Profile Active) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] z-50 flex justify-around items-center h-16 pb-safe bg-surface border-t border-border-hairline shadow-sm">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary active:scale-95 transition-all flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-caption text-[12px] mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Explore (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary active:scale-95 transition-all flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] mt-0.5">Explore</span>
+</a>
+<!-- Tab 3: Go Live (Centered Distinctive Action) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary active:scale-95 transition-all flex-1 -mt-2" href="#">
+<div class="w-10 h-10 rounded-full bg-accent-fill flex items-center justify-center text-white shadow-soft">
+<span class="material-symbols-outlined text-[22px]" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] mt-1">Go Live</span>
+</a>
+<!-- Tab 4: Wallet (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary active:scale-95 transition-all flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] mt-0.5">Wallet</span>
+</a>
+<!-- Tab 5: Profile (Active Mapped Tab) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 hover:text-primary active:scale-95 transition-all flex-1" href="#">
+<span class="material-symbols-outlined text-primary-container" data-icon="person">person</span>
+<span class="font-caption text-[12px] mt-0.5 text-primary-container">Profile</span>
+</a>
+</nav>
+</div>
+<script>
+    // Tab switching interactivity
+    document.querySelectorAll('section button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        if (this.innerText.includes('Replays') || this.innerText.includes('Clips') || this.innerText.includes('Scheduled')) {
+          const siblings = this.parentElement.querySelectorAll('button');
+          siblings.forEach(sib => {
+            sib.classList.remove('font-semibold', 'text-primary-container');
+            sib.classList.add('text-text-tertiary', 'font-medium');
+            const ind = sib.querySelector('div');
+            if (ind) ind.remove();
+          });
+          this.classList.remove('text-text-tertiary', 'font-medium');
+          this.classList.add('font-semibold', 'text-primary-container', 'relative');
+          
+          const indicator = document.createElement('div');
+          indicator.className = 'absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container rounded-full mx-6';
+          this.appendChild(indicator);
+        }
+      });
+    });
+  </script>
+</body></html>

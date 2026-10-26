@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livewave - Go Live Setup</title>
+<!-- Google Fonts: Sora & Syne -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "danger-text": "#CE2020",
+            "success-fill": "#E3F4E9",
+            "on-tertiary-fixed": "#241a00",
+            "text-secondary": "#54465F",
+            "success-text": "#0E7C3A",
+            "inverse-on-surface": "#f8eef9",
+            "background": "#F8F4FC",
+            "error-container": "#ffdad6",
+            "warning-fill": "#FAEFE1",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#efe5f0",
+            "surface-variant": "#e9dfeb",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fbf0fc",
+            "tertiary-fixed-dim": "#e8c25c",
+            "surface-bright": "#fff7fd",
+            "on-error-container": "#93000a",
+            "text-primary": "#160C1F",
+            "surface-alt": "#F2EBF8",
+            "on-tertiary-container": "#503d00",
+            "accent-fill": "#8A43C5",
+            "on-secondary-container": "#466d15",
+            "secondary": "#426910",
+            "border-hairline": "#E6DCEF",
+            "surface": "#FFFFFF",
+            "danger-fill": "#FBE5E5",
+            "outline-variant": "#cfc2d4",
+            "surface-container-highest": "#e9dfeb",
+            "primary-container": "#8e4bc7",
+            "text-tertiary": "#756B80",
+            "tertiary-container": "#cba744",
+            "accent-pressed": "#7D42AF",
+            "secondary-container": "#bfee87",
+            "on-tertiary-fixed-variant": "#594400",
+            "secondary-fixed": "#c2f18a",
+            "warning-text": "#A75906",
+            "on-primary-container": "#f9e9ff",
+            "tertiary-fixed": "#ffdf92",
+            "on-background": "#1f1a22",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "on-surface": "#1f1a22",
+            "surface-dim": "#e1d7e2",
+            "surface-tint": "#7f3cb8",
+            "tertiary": "#755b00",
+            "primary-fixed-dim": "#dfb7ff",
+            "control-border": "#AE87B7",
+            "inverse-primary": "#dfb7ff",
+            "outline": "#7e7383",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "primary-fixed": "#f1daff",
+            "on-secondary-fixed": "#0f2000",
+            "on-primary-fixed": "#2d004f",
+            "on-primary-fixed-variant": "#661e9e",
+            "surface-container": "#f5ebf6",
+            "support-strong": "#6EA22E",
+            "on-secondary": "#ffffff",
+            "live-red": "#DC2626",
+            "accent-tint": "#EEE4F7",
+            "secondary-fixed-dim": "#a7d471",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#4c4452",
+            "inverse-surface": "#342e37",
+            "primary": "#742fac"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "12px",
+            "space-lg": "16px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "space-xs": "4px",
+            "space-sm": "8px"
+          },
+          "fontFamily": {
+            "display": ["Syne", "sans-serif"],
+            "title": ["Sora", "sans-serif"],
+            "caption": ["Sora", "sans-serif"],
+            "body": ["Sora", "sans-serif"],
+            "label": ["Sora", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(22,12,31,.04), 0 8px 24px rgba(22,12,31,.06)",
+            "elevated": "0 4px 20px rgba(138, 67, 197, 0.12)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Tabular figures for stats */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased flex justify-center min-h-screen selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Screen Container (393px × 852px viewport) -->
+<div class="relative w-full max-w-[393px] min-h-[852px] bg-background flex flex-col pb-28 shadow-2xl overflow-x-hidden">
+<!-- 1. iOS Status Bar & Safe Area -->
+<div class="w-full pt-3 px-6 pb-2 flex justify-between items-center text-text-primary z-30 select-none">
+<span class="font-title text-[15px] font-semibold tracking-tight text-text-primary tabular-nums">9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px]" data-icon="signal_cellular_4_bar">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Header / Navigation Bar -->
+<header class="px-margin pt-1 pb-3 flex items-center justify-between z-20">
+<div class="flex items-center space-x-3">
+<button aria-label="Close" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-text-primary border border-border-hairline shadow-soft active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="close">close</span>
+</button>
+<h1 class="font-display text-display text-text-primary leading-none">Go live</h1>
+</div>
+<button aria-label="Settings" class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-text-secondary border border-border-hairline shadow-soft hover:bg-surface-alt active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 px-margin space-y-5">
+<!-- 2. FOCAL Camera Preview Card -->
+<section class="relative w-full h-[270px] rounded-2xl overflow-hidden shadow-soft border border-border-hairline bg-surface">
+<!-- Photo stream background -->
+<img alt="Authentic candid documentary portrait photography of a smiling charismatic young Latino man in his late 20s wearing a casual henley shirt holding a ceramic coffee mug, looking directly into the smartphone front camera as if preparing to stream live, bright sunlit modern apartment kitchen studio background with soft warm morning light and plants, natural depth of field, realistic textures, real photo, no CGI, no render, photorealistic." class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbuCY92QuwaSn9FGNIk3Qxj9OXmejH6ihKJYNb8IDG9UD3dwbXE_uhBWzOD0FewbjHZeuA6NFcjEpYftwJPwOLW5K0GL1xMDCufpMpSNKd_l8qZVae4bVQ8smo2OEmfpLVoWPJGiT-cQx2ekMpp7p5xTZ7PrYPt8jLM2jKvV8tshCZ7H8eQ2ftHc3vyl9mQe2Kneej5sHaBJOk-gilNcKDnFZOqw96qRY0nasJQalSo3611yVO74tgj3o2wURlIBrvjsOEHISXDm0"/>
+<!-- Top-Left: Translucent Pill 'PREVIEW' -->
+<div class="absolute top-3.5 left-3.5 flex items-center space-x-1.5 px-3 py-1 rounded-full bg-video-overlay backdrop-blur-md text-white select-none">
+<span class="w-2 h-2 rounded-full bg-support-strong animate-pulse"></span>
+<span class="font-caption text-caption tracking-wider text-white font-semibold">PREVIEW</span>
+</div>
+<!-- Top-Right: Quick Control Overlays (Vertical Column) -->
+<div class="absolute top-3.5 right-3.5 flex flex-col space-y-2">
+<!-- Flip Camera -->
+<button aria-label="Flip Camera" class="w-9 h-9 rounded-full bg-video-overlay backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="flip_camera_ios">flip_camera_ios</span>
+</button>
+<!-- Mic Toggle -->
+<button aria-label="Microphone" class="w-9 h-9 rounded-full bg-video-overlay backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="mic">mic</span>
+</button>
+<!-- Beauty / Sparkle Filter -->
+<button aria-label="Filters" class="w-9 h-9 rounded-full bg-video-overlay backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<!-- Effects / Audio -->
+<button aria-label="Effects" class="w-9 h-9 rounded-full bg-video-overlay backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="graphic_eq">graphic_eq</span>
+</button>
+</div>
+<!-- Bottom overlay status chip -->
+<div class="absolute bottom-3 left-3.5 right-3.5 flex justify-between items-center text-white/90">
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-video-overlay backdrop-blur-md text-[12px] font-caption">
+<span class="material-symbols-outlined text-[14px] text-white" data-icon="videocam">videocam</span>
+<span>HD Front Camera (1080p 60fps)</span>
+</div>
+</div>
+</section>
+<!-- 3. Stream Details & Categorization -->
+<section class="space-y-3">
+<!-- Title Input -->
+<div class="space-y-1.5">
+<label class="block font-label text-label font-medium text-text-secondary" for="stream-title">
+            Stream title
+          </label>
+<div class="relative">
+<input class="w-full h-12 px-3.5 rounded-xl bg-surface border border-control-border text-text-primary font-body text-body focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all shadow-sm" id="stream-title" placeholder="What are you streaming about?" type="text" value="Morning coffee and Q&amp;A"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-text-tertiary">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</div>
+</div>
+</div>
+<!-- Category Horizontal Chips -->
+<div class="space-y-1.5 pt-1">
+<span class="block font-label text-label font-medium text-text-secondary">Category</span>
+<div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-0.5">
+<!-- Active: Talk -->
+<button class="px-4 py-1.5 rounded-full bg-accent-fill text-white font-label text-caption font-semibold shadow-sm active:scale-95 transition-transform flex items-center space-x-1" type="button">
+<span>Talk</span>
+</button>
+<!-- Inactive: Music -->
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-label text-caption font-semibold hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span>Music</span>
+</button>
+<!-- Inactive: Cooking -->
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-label text-caption font-semibold hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span>Cooking</span>
+</button>
+<!-- Inactive: Gaming -->
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-label text-caption font-semibold hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span>Gaming</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. Technical Configuration Cards -->
+<section class="space-y-3">
+<!-- Card: Streaming Engine -->
+<div class="p-4 rounded-2xl bg-surface border border-border-hairline shadow-soft space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-label font-semibold text-text-primary">Streaming engine</span>
+<span class="font-caption text-caption text-text-secondary flex items-center space-x-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="hub">hub</span>
+<span>RTC Protocol</span>
+</span>
+</div>
+<!-- Segmented Control -->
+<div class="grid grid-cols-3 p-1 rounded-xl bg-surface-alt gap-1">
+<button class="py-2 rounded-lg bg-accent-fill text-white font-label text-caption font-semibold shadow-sm text-center" type="button">
+              Agora
+            </button>
+<button class="py-2 rounded-lg text-text-secondary font-label text-caption font-medium hover:text-text-primary text-center" type="button">
+              LiveKit
+            </button>
+<button class="py-2 rounded-lg text-text-secondary font-label text-caption font-medium hover:text-text-primary text-center" type="button">
+              WebRTC
+            </button>
+</div>
+<!-- Engine Status Caption -->
+<div class="flex items-center space-x-1.5 pt-0.5 text-text-tertiary">
+<span class="material-symbols-outlined text-[16px] text-success-text" data-icon="bolt">bolt</span>
+<span class="font-caption text-caption">Ultra low latency, under 400 ms</span>
+</div>
+</div>
+<!-- Card: Quality & Bitrate -->
+<div class="p-4 rounded-2xl bg-surface border border-border-hairline shadow-soft space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-label font-semibold text-text-primary">Quality</span>
+<span class="font-caption text-caption text-text-secondary font-medium tabular-nums">60 FPS target</span>
+</div>
+<!-- Segmented Control for Resolution -->
+<div class="grid grid-cols-3 p-1 rounded-xl bg-surface-alt gap-1">
+<button class="py-2 rounded-lg text-text-secondary font-label text-caption font-medium hover:text-text-primary text-center" type="button">
+              480p
+            </button>
+<button class="py-2 rounded-lg bg-accent-fill text-white font-label text-caption font-semibold shadow-sm text-center" type="button">
+              720p
+            </button>
+<button class="py-2 rounded-lg text-text-secondary font-label text-caption font-medium hover:text-text-primary text-center" type="button">
+              1080p
+            </button>
+</div>
+<!-- Toggle Row: Adaptive Bitrate -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-body text-[15px] font-medium text-text-primary">Adaptive bitrate</span>
+<span class="font-caption text-[12px] text-text-tertiary">Dynamically adjusts to connection drops</span>
+</div>
+<!-- Custom iOS Toggle ON -->
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-accent-fill p-0.5 flex items-center transition-colors focus:outline-none" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-white shadow-md transform translate-x-5 transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. Pre-flight Check Card -->
+<section class="p-4 rounded-2xl bg-surface border border-border-hairline shadow-soft space-y-3">
+<div class="flex justify-between items-center pb-1">
+<h2 class="font-label text-label font-semibold text-text-primary">Pre-flight check</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-success-fill text-success-text font-caption text-[12px] font-semibold flex items-center space-x-1 tabular-nums">
+<span class="w-1.5 h-1.5 rounded-full bg-success-text"></span>
+<span>3/3 ready</span>
+</span>
+</div>
+<div class="space-y-2.5">
+<!-- Row 1: Network -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-alt/70">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-success-fill text-success-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-caption text-caption font-medium text-text-primary">Network - Good, 18 Mbps up</span>
+</div>
+<span class="font-caption text-[12px] font-semibold text-success-text tabular-nums">42ms</span>
+</div>
+<!-- Row 2: Camera ready -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-alt/70">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-success-fill text-success-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-caption text-caption font-medium text-text-primary">Camera ready</span>
+</div>
+<span class="font-caption text-[12px] font-semibold text-success-text">Active</span>
+</div>
+<!-- Row 3: Microphone ready -->
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-alt/70">
+<div class="flex items-center space-x-2.5">
+<div class="w-7 h-7 rounded-full bg-success-fill text-success-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-caption text-caption font-medium text-text-primary">Microphone ready</span>
+</div>
+<span class="font-caption text-[12px] font-semibold text-success-text">-14 dB</span>
+</div>
+</div>
+</section>
+<!-- 6. Primary Action CTA: Go Live -->
+<section class="pt-1 pb-3">
+<button class="w-full h-14 rounded-full bg-accent-fill hover:bg-accent-pressed active:bg-accent-pressed text-white font-title text-body font-semibold flex items-center justify-center space-x-2.5 shadow-elevated active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="sensors">sensors</span>
+<span>Go Live</span>
+</button>
+</section>
+</main>
+<!-- 7. Bottom Navigation Bar (5 tabs in exact order, Go Live active) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] h-16 bg-surface border-t border-border-hairline flex items-center justify-around z-50 px-2 pb-2">
+<!-- 1: Home -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 flex-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Home</span>
+</a>
+<!-- 2: Explore -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 flex-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Explore</span>
+</a>
+<!-- 3: Go Live (Active State Anchor with circular purple container) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 flex-1 -mt-2" href="#">
+<div class="w-10 h-10 rounded-full bg-accent-fill text-white flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[22px] text-white" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] leading-tight text-primary-container font-semibold mt-0.5">Go Live</span>
+</a>
+<!-- 4: Wallet -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 flex-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Wallet</span>
+</a>
+<!-- 5: Profile -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors py-1 flex-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- iOS Home Indicator -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-text-primary/20 rounded-full z-50 pointer-events-none"></div>
+</div>
+</body></html>

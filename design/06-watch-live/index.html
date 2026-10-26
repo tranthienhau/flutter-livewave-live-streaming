@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livewave - Watch Live</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#4c4452",
+            "text-tertiary": "#756B80",
+            "success-fill": "#E3F4E9",
+            "secondary-fixed-dim": "#a7d471",
+            "on-tertiary": "#ffffff",
+            "warning-text": "#A75906",
+            "border-hairline": "#E6DCEF",
+            "live-red": "#DC2626",
+            "on-primary-fixed-variant": "#661e9e",
+            "surface-alt": "#F2EBF8",
+            "primary-fixed": "#f1daff",
+            "outline": "#7e7383",
+            "primary-fixed-dim": "#dfb7ff",
+            "inverse-primary": "#dfb7ff",
+            "surface-dim": "#e1d7e2",
+            "tertiary": "#755b00",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "inverse-surface": "#342e37",
+            "on-secondary": "#ffffff",
+            "text-secondary": "#54465F",
+            "inverse-on-surface": "#f8eef9",
+            "surface-bright": "#fff7fd",
+            "primary": "#742fac",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-primary-container": "#f9e9ff",
+            "surface-container-high": "#efe5f0",
+            "on-tertiary-container": "#503d00",
+            "background": "#F8F4FC",
+            "surface-container-low": "#fbf0fc",
+            "tertiary-container": "#cba744",
+            "success-text": "#0E7C3A",
+            "text-primary": "#160C1F",
+            "surface": "#FFFFFF",
+            "primary-container": "#8e4bc7",
+            "secondary-container": "#bfee87",
+            "on-error-container": "#93000a",
+            "secondary": "#426910",
+            "control-border": "#AE87B7",
+            "surface-variant": "#e9dfeb",
+            "danger-text": "#CE2020",
+            "tertiary-fixed": "#ffdf92",
+            "accent-pressed": "#7D42AF",
+            "outline-variant": "#cfc2d4",
+            "on-surface": "#1f1a22",
+            "accent-tint": "#EEE4F7",
+            "on-tertiary-fixed-variant": "#594400",
+            "warning-fill": "#FAEFE1",
+            "on-background": "#1f1a22",
+            "surface-tint": "#7f3cb8",
+            "tertiary-fixed-dim": "#e8c25c",
+            "error-container": "#ffdad6",
+            "surface-container": "#f5ebf6",
+            "danger-fill": "#FBE5E5",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#2d004f",
+            "on-secondary-container": "#466d15",
+            "on-secondary-fixed": "#0f2000",
+            "support-strong": "#6EA22E",
+            "accent-fill": "#8A43C5",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "surface-container-highest": "#e9dfeb",
+            "brand-pistachio": "#A8D672"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "8px",
+            "gutter": "16px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "space-xl": "24px",
+            "space-lg": "16px"
+          },
+          "fontFamily": {
+            "caption": ["Sora"],
+            "title": ["Sora"],
+            "display": ["Syne"],
+            "label": ["Sora"],
+            "body": ["Sora"]
+          },
+          "fontSize": {
+            "caption": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+            "title": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "body": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    @keyframes floatUpOne {
+      0% { transform: translateY(0) scale(0.7) rotate(-4deg); opacity: 0; }
+      15% { opacity: 0.95; }
+      65% { transform: translateY(-75px) scale(1.05) rotate(6deg); opacity: 0.9; }
+      100% { transform: translateY(-135px) scale(0.85) rotate(-10deg); opacity: 0; }
+    }
+    @keyframes floatUpTwo {
+      0% { transform: translateY(0) scale(0.6) rotate(6deg); opacity: 0; }
+      20% { opacity: 0.9; }
+      70% { transform: translateY(-90px) scale(1) rotate(-8deg); opacity: 0.85; }
+      100% { transform: translateY(-160px) scale(0.75) rotate(12deg); opacity: 0; }
+    }
+    @keyframes floatUpThree {
+      0% { transform: translateY(0) scale(0.8) rotate(-12deg); opacity: 0; }
+      25% { opacity: 0.85; }
+      60% { transform: translateY(-60px) scale(1.1) rotate(5deg); opacity: 0.8; }
+      100% { transform: translateY(-115px) scale(0.9) rotate(-3deg); opacity: 0; }
+    }
+    .heart-float-1 { animation: floatUpOne 3.2s ease-in-out infinite; }
+    .heart-float-2 { animation: floatUpTwo 3.8s ease-in-out infinite 1.1s; }
+    .heart-float-3 { animation: floatUpThree 3.4s ease-in-out infinite 2.2s; }
+    
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+    .pulse-dot { animation: softPulse 1.8s ease-in-out infinite; }
+
+    /* Custom hidden scrollbar */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-[#160C1F] text-white flex justify-center items-center min-h-screen p-0 m-0 font-body antialiased select-none">
+<!-- Mobile Viewport Canvas: 393px by 852px -->
+<main class="relative w-[393px] h-[852px] overflow-hidden bg-black shadow-2xl flex flex-col justify-between">
+<!-- Full-bleed Streamer Photo Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Lena Park playing acoustic guitar and singing live in a warm studio" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOUCkOf4BixhO7AhJsFLRXmwYkGHKRgaG6RbPKrBvmIrPCGFpAifsqsEUxYRrPfXu48nqc7tfK2qVCZ0Q37YyhzJPGagx6sCLxcmWEYJYWGGZTTQcxYit8hpSu75W_ahfbcdrTuMPK0-SHeUaf9LCmSi2WTkDGkvC7qXYjlY-kCbiYrYOz8KBdRNV67PKqNBALyjh3C-DI3HP7UJRX2JpoVunqnXdLp66pTYjNBdlKUTw-MSNRYZLWRNOnTyglAVMuN713ZNGbu9Q"/>
+<!-- Top Scrim Gradient for Header Contrast -->
+<div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#160C1F]/80 via-[#160C1F]/40 to-transparent pointer-events-none"></div>
+<!-- Bottom Scrim Gradient for Comments & Input Contrast -->
+<div class="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-[#160C1F]/90 via-[#160C1F]/45 to-transparent pointer-events-none"></div>
+</div>
+<!-- Top Safe Area Overlay Header -->
+<header class="relative z-20 pt-[54px] px-[20px] flex items-center justify-between">
+<!-- Left Header Cluster: Host Pill & LIVE Pill -->
+<div class="flex items-center gap-[8px]">
+<!-- Host Profile Pill -->
+<div class="flex items-center gap-[8px] bg-video-overlay backdrop-blur-md pl-[3px] pr-[10px] py-[3px] rounded-full border border-white/10 shadow-sm">
+<img alt="Lena Park avatar" class="w-[32px] h-[32px] rounded-full object-cover ring-1 ring-white/30" src="https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A"/>
+<span class="font-title text-[14px] font-bold text-white tracking-tight">Lena Park</span>
+<button class="bg-white text-accent-fill font-label text-[12px] font-semibold px-[10px] py-[4px] rounded-full hover:bg-surface-alt active:scale-95 transition-all duration-100 shadow-sm">
+            Follow
+          </button>
+</div>
+<!-- LIVE Badge Pill -->
+<div class="flex items-center gap-[5px] bg-live-red text-white px-[9px] py-[5px] rounded-full font-label text-[12px] font-bold tracking-wider shadow-sm">
+<span class="w-[6px] h-[6px] rounded-full bg-white pulse-dot"></span>
+<span>LIVE</span>
+</div>
+</div>
+<!-- Right Header Cluster: Viewers, HD Status, Close -->
+<div class="flex items-center gap-[8px]">
+<!-- Viewer Count & Quality Stack -->
+<div class="flex flex-col items-end gap-[3px]">
+<!-- Viewer Pill -->
+<div class="flex items-center gap-[5px] bg-video-overlay backdrop-blur-md px-[9px] py-[4px] rounded-full border border-white/10 text-white font-caption text-caption">
+<span class="material-symbols-outlined text-[15px] leading-none" data-icon="visibility">visibility</span>
+<span class="font-semibold text-white tracking-tight">2,481</span>
+</div>
+<!-- HD Quality Pill -->
+<div class="flex items-center gap-[4px] bg-video-overlay/80 backdrop-blur-sm px-[6px] py-[1.5px] rounded-full border border-white/10 text-[10px] font-caption text-white/90">
+<span class="w-[5px] h-[5px] rounded-full bg-[#10B981]"></span>
+<span class="font-bold tracking-wider">HD</span>
+</div>
+</div>
+<!-- Close Screen Button (Temporary Departure Action) -->
+<button aria-label="Close Live Stream" class="w-[36px] h-[36px] rounded-full bg-video-overlay backdrop-blur-md flex items-center justify-center text-white border border-white/15 hover:bg-black/70 active:scale-90 transition-all duration-100 shadow-sm">
+<span class="material-symbols-outlined text-[19px]" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Center Interactive Area: Vertical Action Rail & Floating Hearts -->
+<div class="relative z-10 flex-1 flex flex-col justify-end">
+<!-- Right Floating Action Rail -->
+<div class="absolute right-[16px] bottom-[90px] flex flex-col items-center gap-[16px] z-20">
+<!-- Animated Floating 2D Vector Hearts -->
+<div class="absolute -top-[110px] right-2 w-[44px] h-[130px] pointer-events-none overflow-visible">
+<!-- Heart 1 -->
+<div class="heart-float-1 absolute bottom-0 right-1 text-[#FF6584]">
+<svg class="w-6 h-6 fill-current filter drop-shadow-md opacity-90" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+<!-- Heart 2 -->
+<div class="heart-float-2 absolute bottom-2 right-4 text-[#D946EF]">
+<svg class="w-5 h-5 fill-current filter drop-shadow-md opacity-85" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+<!-- Heart 3 -->
+<div class="heart-float-3 absolute bottom-4 right-0 text-[#C084FC]">
+<svg class="w-7 h-7 fill-current filter drop-shadow-md opacity-95" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+</div>
+<!-- 1. Heart / Likes Action -->
+<div class="flex flex-col items-center gap-[4px]">
+<button class="w-[44px] h-[44px] rounded-full bg-video-overlay backdrop-blur-md flex items-center justify-center text-white border border-white/15 hover:bg-white/20 active:scale-90 transition-transform duration-100 shadow-md">
+<span class="material-symbols-outlined text-[23px] text-white" data-icon="favorite">favorite</span>
+</button>
+<span class="font-caption text-[11px] font-semibold text-white/95 tracking-tight drop-shadow-sm">18.3K</span>
+</div>
+<!-- 2. Gift Action -->
+<div class="flex flex-col items-center gap-[4px]">
+<button class="w-[44px] h-[44px] rounded-full bg-video-overlay backdrop-blur-md flex items-center justify-center text-white border border-white/15 hover:bg-white/20 active:scale-90 transition-transform duration-100 shadow-md">
+<span class="material-symbols-outlined text-[22px] text-white" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+</button>
+<span class="font-caption text-[11px] font-medium text-white/80">Gift</span>
+</div>
+<!-- 3. Share Action -->
+<div class="flex flex-col items-center gap-[4px]">
+<button class="w-[44px] h-[44px] rounded-full bg-video-overlay backdrop-blur-md flex items-center justify-center text-white border border-white/15 hover:bg-white/20 active:scale-90 transition-transform duration-100 shadow-md">
+<span class="material-symbols-outlined text-[21px] text-white" data-icon="share">share</span>
+</button>
+<span class="font-caption text-[11px] font-medium text-white/80">Share</span>
+</div>
+<!-- 4. More Options Action -->
+<div class="flex flex-col items-center gap-[4px]">
+<button class="w-[44px] h-[44px] rounded-full bg-video-overlay backdrop-blur-md flex items-center justify-center text-white border border-white/15 hover:bg-white/20 active:scale-90 transition-transform duration-100 shadow-md">
+<span class="material-symbols-outlined text-[22px] text-white" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Bottom-Left Live Comments Feed (Vertical Flow, Stacked upward) -->
+<div class="w-[295px] px-[20px] pb-[16px] flex flex-col justify-end gap-[7px] max-h-[340px] overflow-y-auto no-scrollbar pointer-events-auto">
+<!-- Comment 1: Ava -->
+<div class="inline-flex items-center gap-[8px] bg-video-overlay backdrop-blur-md px-[10px] py-[6px] rounded-[14px] border border-white/10 w-fit max-w-[275px]">
+<img alt="Ava avatar" class="w-[28px] h-[28px] rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XPQQ2q8t-klPXo736dHVYaVQJ-MKLuR2t4it3VhwmJqIoLScaUdvdI3sb2qJDSVC_8ETBKq9VkpAIavkbP4XoxRJhoyEfaJlD2hRVZckE0jtxTpqI0MhGjeb8hlL9OKWAom1Ar2MiJUpFF6Tq11yXjtNtHxQeShTOe4iRV1hlOUYWAUYmBgSak2M96WX6v7RUTyYPrwNIRRCGUa3jPBkOmVig4pHOlE9T0v4p1dfLnK4N2-l65KIFly6M"/>
+<div class="font-label text-[13px] leading-tight overflow-hidden text-ellipsis">
+<span class="font-bold text-white mr-1.5">Ava</span>
+<span class="text-white/90 font-normal">play Yellow please!</span>
+</div>
+</div>
+<!-- Comment 2: Kenji -->
+<div class="inline-flex items-center gap-[8px] bg-video-overlay backdrop-blur-md px-[10px] py-[6px] rounded-[14px] border border-white/10 w-fit max-w-[275px]">
+<div class="w-[28px] h-[28px] rounded-full bg-gradient-to-tr from-[#6366F1] to-[#EC4899] flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0 shadow-inner">
+            K
+          </div>
+<div class="font-label text-[13px] leading-tight overflow-hidden text-ellipsis">
+<span class="font-bold text-white mr-1.5">Kenji</span>
+<span class="text-white/90 font-normal">hello from Tokyo</span>
+</div>
+</div>
+<!-- Comment 3: Sofia -->
+<div class="inline-flex items-center gap-[8px] bg-video-overlay backdrop-blur-md px-[10px] py-[6px] rounded-[14px] border border-white/10 w-fit max-w-[275px]">
+<div class="w-[28px] h-[28px] rounded-full bg-gradient-to-tr from-[#F59E0B] to-[#EF4444] flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0 shadow-inner">
+            S
+          </div>
+<div class="font-label text-[13px] leading-tight overflow-hidden text-ellipsis">
+<span class="font-bold text-white mr-1.5">Sofia</span>
+<span class="text-white/90 font-normal">your voice is unreal</span>
+</div>
+</div>
+<!-- Comment 4: Marco -->
+<div class="inline-flex items-center gap-[8px] bg-video-overlay backdrop-blur-md px-[10px] py-[6px] rounded-[14px] border border-white/10 w-fit max-w-[275px]">
+<img alt="Marco avatar" class="w-[28px] h-[28px] rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UEr_YIiG521zh1IxZTvgE4zRrMuN36HtcVKVB7K-VjQnChB1UP5OJje41CxSoTSvaZmguyANv9iyCuxwQ7zXBU2zIqUbF1UoQqQbRWehCj8WUC95k0WIbdaBnhbT79hlJT30lvxYjLDQlujPDfZbfEY6UDn9OhDK0rXQhlrqyD_lv5ddT6Qtn8NWb-fQY1OlgJfOwzDO9egVF1KSsH9362Qybjn7Gnho4hc54Q4a1SSdEASchMNMENCQ0"/>
+<div class="font-label text-[13px] leading-tight overflow-hidden text-ellipsis">
+<span class="font-bold text-white mr-1.5">Marco</span>
+<span class="text-white/90 font-normal">first time here</span>
+</div>
+</div>
+<!-- System Notification Pill: Marco sent a Rose -->
+<div class="inline-flex items-center gap-[8px] bg-brand-pistachio text-text-primary px-[12px] py-[6px] rounded-full shadow-md w-fit max-w-[275px] font-label text-[13px] font-semibold">
+<span class="material-symbols-outlined text-[17px] text-text-primary" data-icon="redeem">redeem</span>
+<span class="tracking-tight">Marco sent a Rose x5</span>
+</div>
+<!-- Comment 5: Aiko -->
+<div class="inline-flex items-center gap-[8px] bg-video-overlay backdrop-blur-md px-[10px] py-[6px] rounded-[14px] border border-white/10 w-fit max-w-[275px]">
+<img alt="Aiko avatar" class="w-[28px] h-[28px] rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X5VCC8ynqduZDzPUWI6oe7gv5pzqub1nyxASlq8YugtDmGviaPP_gFM6UOIPPdXIb7GL_J_iZmWnlPj06vXSmNXg__9nSWd1j29OYhmVEJr7zvRXxEBF5IMO2wXHHPryInVnv2BY5aVbC2tL2AS3UL6sNPVJ6qmdSkkb9SZ87OSni5A9pGd0BGaVMBzK7tLvUgPadua3tq1Yvt03ilh98VC8w-QzYHDMYxNbo3Qps8kbU48BoE8wzwtQ"/>
+<div class="font-label text-[13px] leading-tight overflow-hidden text-ellipsis">
+<span class="font-bold text-white mr-1.5">Aiko</span>
+<span class="text-white/90 font-normal">love this song</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Docked Controls (above iPhone Home Indicator, ~20px bottom clearance) -->
+<footer class="relative z-20 px-[20px] pb-[34px] pt-1">
+<div class="flex items-center gap-[10px] w-full">
+<!-- Interactive Input Field Pill -->
+<div class="flex-1 flex items-center justify-between bg-video-overlay backdrop-blur-md rounded-full px-[18px] py-[11px] border border-white/20 text-white/70 hover:border-white/40 focus-within:border-accent-fill focus-within:ring-1 focus-within:ring-accent-fill transition-all">
+<span class="font-label text-[14px] text-white/70 select-none">Say something...</span>
+<button class="text-white/60 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[19px] leading-none" data-icon="mood">mood</span>
+</button>
+</div>
+<!-- Fast Gift Pill Button -->
+<button aria-label="Send Quick Gift" class="w-[44px] h-[44px] rounded-full bg-brand-pistachio text-text-primary flex items-center justify-center active:scale-95 transition-transform duration-100 shadow-lg flex-shrink-0">
+<span class="material-symbols-outlined text-[22px] text-text-primary" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+</button>
+<!-- Tap-to-Heart Button -->
+<button aria-label="Send Heart Like" class="w-[44px] h-[44px] rounded-full bg-accent-fill text-white flex items-center justify-center active:scale-95 transition-transform duration-100 shadow-lg flex-shrink-0">
+<span class="material-symbols-outlined text-[22px] text-white" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Native iPhone Home Indicator Bar -->
+<div class="w-[134px] h-[4px] bg-white/40 rounded-full mx-auto mt-[16px]"></div>
+</footer>
+</main>
+</body></html>

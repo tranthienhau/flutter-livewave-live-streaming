@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome to Livewave</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#e8c25c",
+            "on-background": "#1f1a22",
+            "secondary": "#426910",
+            "border-hairline": "#E6DCEF",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#fbf0fc",
+            "on-surface": "#1f1a22",
+            "surface-tint": "#7f3cb8",
+            "on-tertiary-fixed-variant": "#594400",
+            "on-primary-fixed-variant": "#661e9e",
+            "on-secondary": "#ffffff",
+            "control-border": "#AE87B7",
+            "surface-bright": "#fff7fd",
+            "primary": "#742fac",
+            "outline": "#7e7383",
+            "primary-container": "#8e4bc7",
+            "on-tertiary-container": "#503d00",
+            "accent-tint": "#EEE4F7",
+            "warning-text": "#A75906",
+            "inverse-on-surface": "#f8eef9",
+            "accent-pressed": "#7D42AF",
+            "on-primary-fixed": "#2d004f",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "surface-alt": "#F2EBF8",
+            "success-fill": "#E3F4E9",
+            "surface-container-high": "#efe5f0",
+            "success-text": "#0E7C3A",
+            "tertiary": "#755b00",
+            "tertiary-fixed": "#ffdf92",
+            "secondary-fixed": "#c2f18a",
+            "on-secondary-fixed": "#0f2000",
+            "danger-text": "#CE2020",
+            "surface-variant": "#e9dfeb",
+            "primary-fixed-dim": "#dfb7ff",
+            "on-error-container": "#93000a",
+            "text-secondary": "#54465F",
+            "surface-dim": "#e1d7e2",
+            "secondary-fixed-dim": "#a7d471",
+            "accent-fill": "#8A43C5",
+            "on-secondary-container": "#466d15",
+            "on-error": "#ffffff",
+            "on-primary-container": "#f9e9ff",
+            "support-strong": "#6EA22E",
+            "live-red": "#DC2626",
+            "background": "#F8F4FC",
+            "text-tertiary": "#756B80",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#cfc2d4",
+            "text-primary": "#160C1F",
+            "primary-fixed": "#f1daff",
+            "on-surface-variant": "#4c4452",
+            "surface-container-highest": "#e9dfeb",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "danger-fill": "#FBE5E5",
+            "inverse-primary": "#dfb7ff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-container": "#cba744",
+            "inverse-surface": "#342e37",
+            "warning-fill": "#FAEFE1",
+            "surface-container": "#f5ebf6",
+            "secondary-container": "#bfee87",
+            "on-secondary-fixed-variant": "#2e4f00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "32px",
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "margin": "20px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "label": ["Sora"],
+            "caption": ["Sora"],
+            "body": ["Sora"],
+            "title": ["Sora"],
+            "display": ["Syne"]
+          },
+          "fontSize": {
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-text-primary text-surface antialiased flex justify-center items-center min-h-screen p-0 m-0 selection:bg-accent-fill selection:text-white">
+<!-- Mobile Frame (393 x 852 Viewport Anchor) -->
+<main class="relative w-full max-w-[393px] h-[852px] overflow-hidden bg-text-primary flex flex-col justify-between shadow-2xl">
+<!-- Full-Bleed Photograph Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Creator streaming live" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9GYWd7pGjsXo4FsN5-lPVL9PlLflQFJqpNVTv-qT9aFaXa7w-ucwNxLcoBn_Ty_BTQ0OkiesToT5k0QbcautzSX9GrdadWkXcfegf2nSq3EX1gcMy9bsrOrf5lQHNKwc_rs6Z_5EpzAdhSd4knUKi56ltOJrP-owHaz2gYs6B8BpgiZDHZQh8pLrvoY2I4bUSu3g0wmdg9DEwgcXpia6Rfl3re7vEWDn6IwZsycqlPaMZvnl_8t3D5PA3d753v4MjdWX4Wmw98Y"/>
+<!-- Deep Vertical Scrim Gradient for WCAG AAA Compliance -->
+<div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(180deg, rgba(22, 12, 31, 0.25) 0%, rgba(22, 12, 31, 0.05) 30%, rgba(22, 12, 31, 0.65) 58%, rgba(22, 12, 31, 0.96) 80%, rgba(22, 12, 31, 1) 100%);"></div>
+</div>
+<!-- Top Area: Status Bar (59px clear) & Centered Minimal Logo -->
+<header class="relative z-10 w-full pt-[59px] px-margin flex flex-col items-center">
+<!-- App Icon Brand Mark -->
+<div class="w-[38px] h-[38px] rounded-full overflow-hidden flex items-center justify-center shadow-lg bg-accent-fill border border-white/20 transition-transform active:scale-95 duration-150">
+<img alt="Livewave Wave Logo Mark" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VY-kEhzb24K6TEt7mG69hR9ZtQ1j9KfCTTwljf807c9haJqDNMly9HYu2jIKH2kVmPa19qhE_B0xnMbcfMM2ilH9Uy6a6uRNIn0UxC1ekel_ZI69rqDMnlU3MTR9aPDn8DHGreySeet_Hb4LeQjGqYD4deCsyhCiSrOQSfMi3gJQIS43P5kivnmVpanZbSOfzyCjg7uCRl8bKMNBIVjhJVYvrcMeSxNz_a7ERcFjpvOXn5SfUWpsOG6w"/>
+</div>
+</header>
+<!-- Mid-ground visual ambient element: Live badge teaser -->
+<div class="relative z-10 px-margin flex items-center justify-start pointer-events-none opacity-90">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-video-overlay backdrop-blur-md border border-white/10">
+<span class="w-2 h-2 rounded-full bg-live-red animate-pulse"></span>
+<span class="font-caption text-caption text-surface font-semibold tracking-wide">14.8K live now</span>
+</div>
+</div>
+<!-- Content & Action Container (Bottom-Anchored) -->
+<section class="relative z-10 px-margin pb-[34px] flex flex-col items-center text-center w-full">
+<!-- Pagination Dots Indicator -->
+<div aria-label="Onboarding Steps" class="flex items-center justify-center gap-2 mb-space-xl" role="tablist">
+<div aria-current="step" aria-label="Step 1" class="w-6 h-2 rounded-full bg-accent-fill transition-all duration-300"></div>
+<div aria-label="Step 2" class="w-2 h-2 rounded-full bg-white/40"></div>
+<div aria-label="Step 3" class="w-2 h-2 rounded-full bg-white/40"></div>
+</div>
+<!-- Typography -->
+<div class="space-y-space-sm mb-space-2xl max-w-[340px]">
+<h1 class="font-display text-display text-surface tracking-[-0.02em] drop-shadow-sm">
+          Go live in seconds
+        </h1>
+<p class="font-body text-body text-white/90 leading-relaxed font-normal">
+          Stream, chat and earn with your community in real time.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col items-center gap-space-md">
+<!-- Primary Pill Button -->
+<button class="w-full h-14 rounded-full bg-accent-fill text-white font-body text-body font-semibold flex items-center justify-center shadow-md hover:bg-accent-pressed active:bg-accent-pressed active:scale-[0.98] transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-fill focus:ring-offset-text-primary" type="button">
+          Get started
+        </button>
+<!-- Secondary Ghost / Account Link -->
+<button class="py-2.5 px-4 font-label text-label text-white/85 hover:text-white font-medium active:scale-95 transition-all duration-150 focus:outline-none" type="button">
+          I already have an account
+        </button>
+</div>
+<!-- Safe Area Home Indicator -->
+<div aria-hidden="true" class="w-32 h-1 bg-white/35 rounded-full mt-6 mb-1"></div>
+</section>
+</main>
+</body></html>

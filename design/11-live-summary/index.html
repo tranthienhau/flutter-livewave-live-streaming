@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livewave - Stream Summary</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#742fac",
+            "on-primary-container": "#f9e9ff",
+            "tertiary-container": "#cba744",
+            "error-container": "#ffdad6",
+            "on-surface": "#1f1a22",
+            "accent-tint": "#EEE4F7",
+            "on-secondary-container": "#466d15",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#c2f18a",
+            "inverse-on-surface": "#f8eef9",
+            "primary-fixed-dim": "#dfb7ff",
+            "surface-container-highest": "#e9dfeb",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#e8c25c",
+            "surface-bright": "#fff7fd",
+            "primary-container": "#8e4bc7",
+            "surface-tint": "#7f3cb8",
+            "inverse-surface": "#342e37",
+            "primary-fixed": "#f1daff",
+            "surface-container-high": "#efe5f0",
+            "outline-variant": "#cfc2d4",
+            "on-primary-fixed-variant": "#661e9e",
+            "danger-fill": "#FBE5E5",
+            "surface-alt": "#F2EBF8",
+            "secondary-container": "#bfee87",
+            "on-tertiary": "#ffffff",
+            "outline": "#7e7383",
+            "on-primary-fixed": "#2d004f",
+            "on-tertiary-container": "#503d00",
+            "background": "#F8F4FC",
+            "tertiary": "#755b00",
+            "accent-pressed": "#7D42AF",
+            "text-primary": "#160C1F",
+            "warning-fill": "#FAEFE1",
+            "secondary-fixed-dim": "#a7d471",
+            "live-red": "#DC2626",
+            "on-surface-variant": "#4c4452",
+            "warning-text": "#A75906",
+            "text-secondary": "#54465F",
+            "secondary": "#426910",
+            "surface-dim": "#e1d7e2",
+            "support-strong": "#6EA22E",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e9dfeb",
+            "tertiary-fixed": "#ffdf92",
+            "inverse-primary": "#dfb7ff",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#1f1a22",
+            "control-border": "#AE87B7",
+            "danger-text": "#CE2020",
+            "text-tertiary": "#756B80",
+            "surface": "#FFFFFF",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "surface-container-low": "#fbf0fc",
+            "success-text": "#0E7C3A",
+            "on-error": "#ffffff",
+            "border-hairline": "#E6DCEF",
+            "success-fill": "#E3F4E9",
+            "on-tertiary-fixed-variant": "#594400",
+            "accent-fill": "#8A43C5",
+            "surface-container": "#f5ebf6",
+            "on-tertiary-fixed": "#241a00",
+            "on-secondary-fixed": "#0f2000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-2xl": "32px",
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-md": "12px",
+            "space-lg": "16px"
+          },
+          "fontFamily": {
+            "title": ["Sora"],
+            "caption": ["Sora"],
+            "body": ["Sora"],
+            "label": ["Sora"],
+            "display": ["Syne"]
+          },
+          "fontSize": {
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-ambient-shadow {
+      box-shadow: 0 1px 2px rgba(22, 12, 31, 0.04), 0 8px 24px rgba(22, 12, 31, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased flex justify-center min-h-screen">
+<!-- iPhone 16/17 Target Form Factor (393px × 852px) -->
+<main class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative select-none pb-8">
+<!-- Status Bar & Top Safe Area -->
+<header class="pt-12 px-margin pb-3 flex items-center justify-between sticky top-0 bg-background/95 backdrop-blur-md z-30">
+<div class="flex items-center gap-2">
+<button aria-label="Dismiss summary" class="w-9 h-9 rounded-full bg-surface border border-border-hairline flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<span class="font-title text-title text-text-primary tracking-tight">Stream Summary</span>
+</div>
+<button aria-label="More options" class="w-9 h-9 rounded-full bg-surface border border-border-hairline flex items-center justify-center text-text-secondary hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</header>
+<!-- Scrollable Report Canvas -->
+<div class="px-margin flex flex-col gap-4">
+<!-- 1. Hero Card: Stream Ended -->
+<section class="rounded-3xl bg-gradient-to-br from-accent-fill to-accent-pressed p-5 text-on-primary custom-ambient-shadow relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-on-primary ring-2 ring-white/30">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h1 class="font-title text-title text-on-primary leading-tight">Stream ended</h1>
+<p class="font-caption text-caption text-on-primary/80 mt-0.5">Morning coffee &amp; Q&amp;A • 52 min</p>
+</div>
+</div>
+<span class="font-caption text-[11px] px-2.5 py-1 rounded-full bg-white/20 text-on-primary font-medium tracking-wide">
+            Today, 09:42 AM
+          </span>
+</div>
+</section>
+<!-- 2. Focal Metric Card: Peak Viewers -->
+<section class="rounded-2xl bg-surface border border-border-hairline p-5 custom-ambient-shadow flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-secondary font-medium">Peak viewers</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-title text-3xl font-bold text-primary-container tracking-tight">2,940</span>
+<span class="inline-flex items-center text-[12px] font-semibold text-support-strong bg-success-fill px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+              +14.2%
+            </span>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary mt-1">Highest concurrency at minute 38</span>
+</div>
+<div class="w-13 h-13 rounded-2xl bg-accent-tint/70 p-3.5 flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</section>
+<!-- 3. Key Metrics 2x3 Bento Grid -->
+<section aria-label="Key Stream Metrics" class="grid grid-cols-2 gap-3">
+<!-- Total Views -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">Total views</span>
+<div class="w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</div>
+</div>
+<div class="mt-2.5">
+<span class="font-title text-[20px] font-bold text-text-primary">8,412</span>
+<p class="font-caption text-[11px] text-text-tertiary mt-0.5">Unique sessions</p>
+</div>
+</article>
+<!-- New Followers -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">New followers</span>
+<div class="w-7 h-7 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+</div>
+</div>
+<div class="mt-2.5">
+<span class="font-title text-[20px] font-bold text-support-strong">+186</span>
+<p class="font-caption text-[11px] text-text-tertiary mt-0.5">From direct live</p>
+</div>
+</article>
+<!-- Comments -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">Comments</span>
+<div class="w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[16px]">chat_bubble</span>
+</div>
+</div>
+<div class="mt-2.5">
+<span class="font-title text-[20px] font-bold text-text-primary">1,203</span>
+<p class="font-caption text-[11px] text-text-tertiary mt-0.5">23 msgs / min</p>
+</div>
+</article>
+<!-- Gifts Earned -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">Gifts earned</span>
+<div class="w-7 h-7 rounded-full bg-warning-fill flex items-center justify-center text-warning-text">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="font-title text-[20px] font-bold text-primary-container">6,450</span>
+<span class="font-caption text-[11px] font-semibold text-warning-text">coins</span>
+</div>
+<p class="font-caption text-[11px] text-text-tertiary mt-0.5">≈ $64.50 USD</p>
+</div>
+</article>
+<!-- Avg Watch Time -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">Avg watch time</span>
+<div class="w-7 h-7 rounded-full bg-surface-alt flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+</div>
+</div>
+<div class="mt-2.5">
+<span class="font-title text-[20px] font-bold text-text-primary">7m 40s</span>
+<p class="font-caption text-[11px] text-text-tertiary mt-0.5">+1m 12s vs avg</p>
+</div>
+</article>
+<!-- Avg RTC Latency -->
+<article class="bg-surface rounded-2xl border border-border-hairline p-3.5 custom-ambient-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary">Avg latency</span>
+<div class="w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="font-title text-[20px] font-bold text-text-primary">318</span>
+<span class="font-caption text-[11px] text-text-secondary">ms</span>
+</div>
+<p class="font-caption text-[11px] text-support-strong flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-support-strong"></span> Ultra HD RTC
+            </p>
+</div>
+</article>
+</section>
+<!-- 4. Top Supporters Card -->
+<section class="bg-surface rounded-2xl border border-border-hairline p-4 custom-ambient-shadow flex flex-col">
+<div class="flex items-center justify-between pb-3 border-b border-border-hairline">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-warning-fill flex items-center justify-center text-warning-text">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">rewarded_ads</span>
+</div>
+<h2 class="font-label text-label font-semibold text-text-primary">Top supporters</h2>
+</div>
+<span class="font-caption text-caption text-accent-fill font-medium">32 gifters</span>
+</div>
+<div class="divide-y divide-border-hairline">
+<!-- Rank 1: Sofia -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 flex justify-center">
+<span class="w-5 h-5 rounded-full bg-[#E5B800] text-surface font-bold text-[11px] flex items-center justify-center shadow-sm">1</span>
+</div>
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-[#E5B800]/40" data-alt="A portrait photography shot of Sofia, a stylish woman with warm lighting and a natural smile in a modern cafe setting. The photo highlights clean, realistic colors matching a violet and neutral palette with high aesthetic clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3og-r5X53sho1rbwoXzIPUoV5LoRsN1rVBPVyJJMqdG0FHK4x4ZhNT9yk0vVK1yUKKqIfQhCgu6fbmYoT394UQp_1CDK1tuZYudOxg8td4-EjvyPkLspl55AZuRtZK1rGhSARICknnWduZ1AJWF4ePFoKbWlfErimh-ULVoor32YZS4hdLPgqgHmV_bEPS69UKGyAloW61Trcsf8hw2VJwKFtmJzKxCqNF87F9xXUKAZ0f1tQt2QFvMI3bjgWxX5iyeQdR6ns6yg"/>
+<div class="flex flex-col">
+<span class="font-label text-label font-semibold text-text-primary">Sofia</span>
+<span class="font-caption text-[11px] text-text-tertiary">Top contributor</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-accent-tint px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-warning-text" style="font-variation-settings: 'FILL' 1;">token</span>
+<span class="font-caption text-caption font-semibold text-primary">1,500</span>
+</div>
+</div>
+<!-- Rank 2: Marco -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 flex justify-center">
+<span class="w-5 h-5 rounded-full bg-[#9EA3B0] text-surface font-bold text-[11px] flex items-center justify-center shadow-sm">2</span>
+</div>
+<img class="w-10 h-10 rounded-full object-cover ring-2 ring-[#9EA3B0]/40" data-alt="A natural candid portrait photograph of Marco, an energetic young man smiling warmly against a soft-lit indoor architectural background. Cohesive studio atmosphere with natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJrJH3lVGVmQ2ABBWbkaXS1UD3KXSnedseavlYjkIScf0IWGTKVZkSp1_pj7JXW0aN8BabONfSc-RXV1aNkG4l7ft16v_eV6JJwOuxlqo0Gzc21l7QKpr-IOhjnEj8fR1ILLisswbgMDF1dnU4DEeZrZR35-xmG_9-k-lSswsAWDU1qlAFKeHPdezzXuxXWQwMAv4rWOmAqzYmAgGRTy-TGuHaY03aNzFuVHzhRlbM-nSRDFK7Eo2CWhpJdV4AETxLY5SsdyRLq0M"/>
+<div class="flex flex-col">
+<span class="font-label text-label font-semibold text-text-primary">Marco</span>
+<span class="font-caption text-[11px] text-text-tertiary">Subscribed 3mo</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-alt px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-warning-text" style="font-variation-settings: 'FILL' 1;">token</span>
+<span class="font-caption text-caption font-semibold text-text-primary">900</span>
+</div>
+</div>
+<!-- Rank 3: Ava (using specified image asset https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A) -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 flex justify-center">
+<span class="w-5 h-5 rounded-full bg-[#B87333] text-surface font-bold text-[11px] flex items-center justify-center shadow-sm">3</span>
+</div>
+<img alt="Ava avatar" class="w-10 h-10 rounded-full object-cover ring-2 ring-[#B87333]/40" src="https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A"/>
+<div class="flex flex-col">
+<span class="font-label text-label font-semibold text-text-primary">Ava</span>
+<span class="font-caption text-[11px] text-text-tertiary">Sent Super Heart</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-alt px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-warning-text" style="font-variation-settings: 'FILL' 1;">token</span>
+<span class="font-caption text-caption font-semibold text-text-primary">600</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Bottom Action Controls -->
+<section class="flex flex-col gap-2.5 pt-2 pb-6">
+<!-- Primary Pill Button -->
+<button class="w-full h-12 rounded-full bg-accent-fill text-on-primary font-label text-body font-semibold flex items-center justify-center gap-2 hover:bg-accent-pressed active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">download</span>
+          Save replay
+        </button>
+<!-- Secondary Outline Pill Button -->
+<button class="w-full h-12 rounded-full bg-surface border-[1.5px] border-primary-container text-primary-container font-label text-body font-semibold flex items-center justify-center gap-2 hover:bg-accent-tint/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+          Share highlights
+        </button>
+<!-- Back to home text link -->
+<div class="text-center pt-2">
+<button class="font-label text-label text-text-tertiary hover:text-primary active:scale-95 transition-all underline underline-offset-4">
+            Back to home
+          </button>
+</div>
+</section>
+</div>
+</main>
+</body></html>

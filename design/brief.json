@@ -1,0 +1,398 @@
+{
+  "title": "Livewave",
+  "slug": "livewave",
+  "domain": "media",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Live feed discovery: live-now grid, featured stream, categories, trending, search",
+    "Viewer watch screen: full-screen video, live comments overlay, viewer count, follow",
+    "Reactions (floating hearts) and virtual gifts paid with coins",
+    "Host go-live: camera preview, title, category, streaming engine choice (Agora / LiveKit / WebRTC), quality preset",
+    "Host live room: broadcast timer, live viewer count, incoming comments, gift alerts, pin and mute moderation, end stream",
+    "Stream health diagnostics: bitrate, FPS, latency, packet loss, auto-reconnect log with backoff",
+    "Post-stream summary: duration, peak viewers, new followers, gifts earned, average latency",
+    "Coin wallet: balance, top-up packs, creator earnings",
+    "Creator profile with past streams (replays) and schedule",
+    "Stream settings: low-latency mode, adaptive bitrate, auto-reconnect, QA debug overlay"
+  ],
+  "bannedTerms": [
+    "Twitch",
+    "TikTok",
+    "YouTube",
+    "Instagram",
+    "crypto",
+    "NFT",
+    "betting"
+  ],
+  "screenCount": 14,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": [
+        "Home",
+        "Explore",
+        "Go Live",
+        "Wallet",
+        "Profile"
+      ],
+      "icons": [
+        "house",
+        "compass",
+        "radio (broadcast)",
+        "wallet",
+        "user-circle"
+      ],
+      "note": "Flat white bar, 5 tabs in this exact order. Active tab icon + label in accent #8E4BC7, inactive in text.tertiary. Go Live tab icon sits in a small accent circle. Reused verbatim on every nav-bearing screen."
+    },
+    "statusBar": "Red LIVE pill (danger #DC2626 fill, white bold 'LIVE' 13px) + viewer count pill (dark translucent rgba(22,12,31,.55) fill, white eye icon + number) - same component on every stream card and every live video screen.",
+    "controls": "Primary button: pill, accentFill #8E4BC7, white 16/600 label, pressed #7D42AF, disabled 40% opacity. Secondary button: pill, white fill, 1.5px border #8E4BC7, accent label. Text input: 12px radius, white, 1px borderStrong, focus = 2px accent ring, error = danger. Card: 20px radius, white, soft shadow. Chip: pill, accentTint fill, accent-dark text 13/600."
+  },
+  "screens": [
+    {
+      "name": "welcome",
+      "purpose": "First-run onboarding: what the app is, sign in or continue",
+      "content": "Full-bleed real photo of a smiling young woman streaming from her phone on a ring-light tripod in a cozy studio, soft purple light. Gradient overlay bottom (accent to dark). App logo mark small at top. Headline 'Go live in seconds'. Sub 'Stream, chat and earn with your community in real time.' Primary pill 'Get started', secondary text link 'I already have an account'. Three page dots.",
+      "group": "onboarding",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "home",
+      "purpose": "Discover who is live now",
+      "content": "Header 'Livewave' wordmark-free: greeting 'Hi, Maya' + search icon + bell. Focal: large featured live card (real photo of a DJ behind turntables with neon, LIVE pill, '12.4K' viewers, title 'Friday Night House Set', creator 'DJ Kairo' with avatar). Section 'Following - live now' horizontal row of circular avatars with accent ring + LIVE tag (Lena Park, Marco Ruiz, Aiko Tan, Sam Okafor). Section 'Live now' 2-column grid of 4 stream cards (cooking, guitar acoustic, fitness HIIT, travel walking tour Lisbon) each real photo thumbnail, LIVE pill, viewer count, title, creator name.",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "default",
+        "empty"
+      ]
+    },
+    {
+      "name": "home-empty",
+      "purpose": "Home when no followed creators are live",
+      "content": "Same header. Empty state: real photo of a quiet home studio desk with an unlit ring light and phone on tripod. Title 'Nobody you follow is live'. Body 'Follow creators to get notified when they go live.' Primary pill 'Explore live streams'. Below, small row 'Suggested creators' with 3 avatar chips + Follow buttons.",
+      "group": "core",
+      "nav": "Home",
+      "states": [
+        "empty"
+      ]
+    },
+    {
+      "name": "explore",
+      "purpose": "Browse categories, trending streams and search",
+      "content": "Search input 'Search creators, streams, tags'. Category chips row: All (active), Music, Gaming, Cooking, Fitness, Talk, Travel, Art. Focal: 'Trending' horizontal carousel of tall 3:4 stream cards with real photos (painter at canvas, chef plating, street musician), LIVE pills + viewer counts. Section 'Top categories' 2x2 tiles with real photos and live counts ('Music - 1.2K live'). Section 'Rising creators' list rows: avatar, name, category, followers, Follow pill.",
+      "group": "core",
+      "nav": "Explore",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "creator-profile",
+      "purpose": "View a creator channel before or after watching",
+      "content": "Cover real photo of a guitarist in a warm-lit room, back arrow. Avatar overlapping cover with LIVE ring + LIVE pill. Name 'Lena Park', handle '@lenaplays', bio 'Acoustic covers every night 8pm'. Stats row: 48.2K followers, 312 streams, 4.9 rating. Buttons: primary 'Watch live', secondary 'Following'. Section 'Schedule' rows (Mon 8:00 PM Acoustic requests, Wed 8:00 PM Songwriting). Section 'Past streams' 2-col replays with duration badges and view counts.",
+      "group": "detail",
+      "nav": "Explore",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "watch-live",
+      "purpose": "Viewer watches a live stream and chats",
+      "content": "Full-screen real photo of Lena Park singing with acoustic guitar facing camera, warm light. Top overlay: creator avatar + name + white Follow pill, LIVE pill, viewer pill '2,481', close X. Right side vertical action rail: heart (with count 18.3K), gift, share, more. Bottom-left live comments overlay, 6 messages on dark translucent bubbles with avatar + bold name + text (e.g. 'Ava: play Yellow please!', 'Kenji: hello from Tokyo', system row 'Marco sent a Rose x5' with gift icon in support green). Floating hearts rising on right. Bottom bar: comment input 'Say something...' on dark translucent pill, gift button, heart button. Small connection-quality dot 'HD' chip top-right.",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "gift-sheet",
+      "purpose": "Send a virtual gift to the creator",
+      "content": "Dimmed live video photo behind. Bottom sheet white, 24px top radius, grabber. Title 'Send a gift' + coin balance chip '1,250 coins' + 'Top up' link. Grid 4x2 of gifts as flat 2D vector icons (Rose 1, Heart 5, Coffee 10, Star 25, Mic 50, Rocket 100, Crown 500, Wave 1000) each with name + coin price, one selected (accent border + tint). Quantity stepper x1 x5 x10. Primary pill 'Send Rocket - 100 coins'.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "go-live-setup",
+      "purpose": "Host prepares a stream before going live",
+      "content": "Top: camera preview card (real photo of a young man smiling into front camera in a bright room) with flip camera, mic and beauty toggle icon buttons overlaid. Input 'Stream title' filled 'Morning coffee and Q&A'. Category chip selector (Talk selected). Card 'Streaming engine' segmented control: Agora (selected), LiveKit, WebRTC with caption 'Ultra low latency, under 400 ms'. Card 'Quality' segmented: 480p, 720p (selected), 1080p + toggle 'Adaptive bitrate' on. Pre-flight check row: Network 'Good - 18 Mbps up' green check, Camera ok, Mic ok. Focal: large primary pill 'Go Live' with broadcast icon.",
+      "group": "core",
+      "nav": "Go Live",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "host-live",
+      "purpose": "Host is broadcasting and manages the room",
+      "content": "Full-screen real photo of the host (young man with coffee mug) facing camera. Top overlay: LIVE pill + timer '00:24:17', viewer pill '1,034', health chip 'Excellent 3.2 Mbps' with green dot, End button (danger outline). Gift alert banner mid-left: 'Sofia sent a Crown x1 +500' on support green tint. Bottom-left comments overlay with 5 messages; one comment pinned at top with pin icon. Long-press menu hint on one comment showing small action chips 'Pin', 'Mute', 'Remove'. Bottom row of round icon buttons: mic, flip camera, beauty, stream health (activity icon), comments toggle.",
+      "group": "core",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "stream-health",
+      "purpose": "Host or QA checks live stream diagnostics",
+      "content": "Header back arrow + 'Stream health' + green status chip 'Stable'. Focal: big numeral card '3.2 Mbps' bitrate with a 60-second line chart (accent line, support second series 'target'). 2x2 metric tiles: FPS 30, Latency 312 ms, Packet loss 0.4%, Resolution 720p. Card 'Connection' rows: Engine Agora RTC, Region Singapore, Network Wi-Fi, Encoder H.264 hardware. Card 'Reconnect log' timeline: 00:18:02 Network dropped - reconnecting (warning icon), 00:18:04 Retry 1 after 1s, 00:18:06 Reconnected in 3.8s (success). Toggle row 'Show debug overlay on video'.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "live-summary",
+      "purpose": "Host sees results after ending the stream",
+      "content": "Soft accent to support gradient hero with white check icon, title 'Stream ended', subtitle 'Morning coffee and Q&A - 52 min'. Focal stat: '2,940' peak viewers large numeral. 2x3 stat grid: Total views 8,412, New followers +186, Comments 1,203, Gifts earned 6,450 coins, Avg watch time 7m 40s, Avg latency 318 ms. Card 'Top supporters' 3 rows with avatars + coins. Primary pill 'Save replay', secondary 'Share highlights', text link 'Back to home'.",
+      "group": "detail",
+      "nav": "none",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "wallet",
+      "purpose": "Buy coins and see creator earnings",
+      "content": "Title 'Wallet'. Focal: gradient balance card 'Coin balance 1,250' with coin glyph + 'Earnings $214.60 this month' sub-row and 'Withdraw' small pill. Section 'Top up' 2x3 grid of coin packs (100 - $0.99, 500 - $4.99, 1,200 - $9.99 'Popular' tag, 2,500 - $19.99, 6,500 - $49.99, 14,000 - $99.99). Section 'Recent activity' list: Sent Rocket to Lena Park -100, Received Crown from Sofia +500, Top up +1,200.",
+      "group": "core",
+      "nav": "Wallet",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "profile",
+      "purpose": "My channel and past streams",
+      "content": "Avatar real photo of Maya Chen (young woman, purple sweater) + name + '@mayalive' + edit pill. Stats row: 3,210 followers, 184 following, 46 streams. Focal: card 'This week' with mini bar chart of hours streamed (support bars) and 'Peak 2,940 viewers'. Tabs Replays / Clips / Scheduled. 2-col replay grid with real photo thumbnails, duration badge, views. Settings gear top-right.",
+      "group": "settings",
+      "nav": "Profile",
+      "states": [
+        "default"
+      ]
+    },
+    {
+      "name": "stream-settings",
+      "purpose": "Configure streaming quality and reliability",
+      "content": "Header back + 'Stream settings'. Group 'Video': Default quality 720p row, Frame rate 30 fps row, toggle Adaptive bitrate on, toggle Low-latency mode on. Group 'Reliability': toggle Auto-reconnect on, row Max retries 5, row Backoff 'Exponential 1s to 16s'. Group 'Engine': row Default engine Agora, row Region Auto. Group 'Developer and QA': toggle Debug overlay off, toggle Simulate poor network off, row 'Export session logs'. Group 'Chat': toggle Slow mode, row Blocked words 12.",
+      "group": "settings",
+      "nav": "Profile",
+      "states": [
+        "default"
+      ]
+    }
+  ],
+  "designSystem": {
+    "variant": "P41",
+    "theme": "light",
+    "frame": "393x852, top inset 59px, bottom inset 34px",
+    "color": {
+      "background": "#F8F4FC",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F2EBF8",
+      "accent": "#8E4BC7",
+      "accentFill": "#8A43C5",
+      "accentTint": "#EEE4F7",
+      "accentPressed": "#7D42AF",
+      "support": "#A8D672",
+      "text": {
+        "primary": "#160C1F",
+        "secondary": "#54465F",
+        "tertiary": "#756B80"
+      },
+      "border": "#E6DCEF",
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "danger": "#DC2626",
+      "gradient": [
+        "#8A43C5",
+        "#7D42AF"
+      ],
+      "statusOn": {
+        "warning": {
+          "fg": "#A75906",
+          "tint": "#FAEFE1"
+        },
+        "success": {
+          "fg": "#0E7C3A",
+          "tint": "#E3F4E9"
+        },
+        "danger": {
+          "fg": "#CE2020",
+          "tint": "#FBE5E5"
+        },
+        "info": {
+          "fg": "#8A43C5",
+          "tint": "#F1E8F8"
+        }
+      },
+      "supportStrong": "#6EA22E",
+      "borderStrong": "#AE87B7"
+    },
+    "type": {
+      "fontFamily": "Sora",
+      "displayFamily": "Syne",
+      "numeralFamily": "Sora (tabular)",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500",
+      "minSize": "12px (13px chips and tags, 14px safety or legal text)",
+      "scaleRule": "Use only the 5 declared sizes (display, title, body, label, caption)."
+    },
+    "radius": {
+      "card": 20,
+      "control": 14,
+      "input": 12,
+      "pill": 999
+    },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32); screen edge 20px",
+    "elevation": "card = 0 1px 2px rgba(22,12,31,.04) + 0 8px 24px rgba(22,12,31,.06)",
+    "icons": "rounded outline, 24px, 1.75 stroke, one set (Lucide style)",
+    "a11y": "white labels on #8E4BC7 only; support green carries dark #160C1F labels; text over video uses dark translucent bubbles rgba(22,12,31,.55) with white text; taps >= 44pt"
+  },
+  "tokenCheck": {
+    "results": [
+      {
+        "pair": "text.primary on background",
+        "ratio": 17.48,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.primary on surface",
+        "ratio": 18.98,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on background",
+        "ratio": 8.0,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.secondary on surface",
+        "ratio": 8.68,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "text.tertiary on background",
+        "ratio": 4.19,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#756B80",
+        "after": 4.64
+      },
+      {
+        "pair": "text.tertiary on surface",
+        "ratio": 5.03,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white label on accentFill (buttons)",
+        "ratio": 5.27,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "accentFill text on accentTint (chips, selected)",
+        "ratio": 4.29,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#8A43C5",
+        "after": 4.63
+      },
+      {
+        "pair": "accentFill as link text on background",
+        "ratio": 5.24,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "white on hero gradient (both stops)",
+        "ratio": 5.69,
+        "target": 4.5,
+        "pass": true,
+        "fixedTo": null,
+        "after": null
+      },
+      {
+        "pair": "warning text on its tint and on surface",
+        "ratio": 2.81,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#A75906",
+        "after": 4.54
+      },
+      {
+        "pair": "success text on its tint and on surface",
+        "ratio": 2.89,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#0E7C3A",
+        "after": 4.64
+      },
+      {
+        "pair": "danger text on its tint and on surface",
+        "ratio": 4.01,
+        "target": 4.5,
+        "pass": false,
+        "fixedTo": "#CE2020",
+        "after": 4.53
+      },
+      {
+        "pair": "support as chart line / icon on surface (non-text 3:1)",
+        "ratio": 1.68,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#6EA22E",
+        "after": 3.06
+      },
+      {
+        "pair": "input / control border on surface (non-text 3:1)",
+        "ratio": 1.33,
+        "target": 3.0,
+        "pass": false,
+        "fixedTo": "#AE87B7",
+        "after": 3.02
+      }
+    ],
+    "changed": {
+      "text.tertiary": {
+        "from": "#7E7189",
+        "to": "#756B80"
+      },
+      "accentFill": {
+        "from": "#8E4BC7",
+        "to": "#8A43C5"
+      }
+    },
+    "passed": true
+  }
+}

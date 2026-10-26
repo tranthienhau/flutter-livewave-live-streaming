@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Livewave - Explore</title>
+<!-- Google Fonts: Sora & Syne -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "live-red": "#DC2626",
+            "on-error": "#ffffff",
+            "inverse-surface": "#342e37",
+            "warning-fill": "#FAEFE1",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#661e9e",
+            "error": "#ba1a1a",
+            "surface-dim": "#e1d7e2",
+            "on-tertiary-fixed-variant": "#594400",
+            "outline": "#7e7383",
+            "tertiary": "#755b00",
+            "danger-text": "#CE2020",
+            "primary-fixed-dim": "#dfb7ff",
+            "secondary-container": "#bfee87",
+            "on-primary-container": "#f9e9ff",
+            "secondary-fixed-dim": "#a7d471",
+            "on-tertiary-fixed": "#241a00",
+            "support-strong": "#6EA22E",
+            "success-fill": "#E3F4E9",
+            "success-text": "#0E7C3A",
+            "border-hairline": "#E6DCEF",
+            "surface-container-high": "#efe5f0",
+            "on-tertiary-container": "#503d00",
+            "surface-container-highest": "#e9dfeb",
+            "on-surface": "#1f1a22",
+            "danger-fill": "#FBE5E5",
+            "tertiary-fixed": "#ffdf92",
+            "on-secondary-container": "#466d15",
+            "inverse-primary": "#dfb7ff",
+            "primary-container": "#8e4bc7",
+            "secondary-fixed": "#c2f18a",
+            "on-tertiary": "#ffffff",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "surface": "#FFFFFF",
+            "on-primary-fixed": "#2d004f",
+            "on-surface-variant": "#4c4452",
+            "text-secondary": "#54465F",
+            "surface-bright": "#fff7fd",
+            "primary-fixed": "#f1daff",
+            "text-primary": "#160C1F",
+            "surface-container-low": "#fbf0fc",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "tertiary-container": "#cba744",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f8eef9",
+            "surface-tint": "#7f3cb8",
+            "primary": "#742fac",
+            "outline-variant": "#cfc2d4",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#0f2000",
+            "surface-container": "#f5ebf6",
+            "secondary": "#426910",
+            "accent-pressed": "#7D42AF",
+            "warning-text": "#A75906",
+            "on-background": "#1f1a22",
+            "surface-variant": "#e9dfeb",
+            "background": "#F8F4FC",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "control-border": "#AE87B7",
+            "tertiary-fixed-dim": "#e8c25c",
+            "surface-alt": "#F2EBF8",
+            "accent-tint": "#EEE4F7",
+            "text-tertiary": "#756B80",
+            "accent-fill": "#8A43C5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "32px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "gutter": "16px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-md": "12px"
+          },
+          "fontFamily": {
+            "title": ["Sora", "sans-serif"],
+            "caption": ["Sora", "sans-serif"],
+            "label": ["Sora", "sans-serif"],
+            "display": ["Syne", "sans-serif"],
+            "body": ["Sora", "sans-serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .soft-shadow {
+      box-shadow: 0 1px 2px rgba(22,12,31,.04), 0 8px 24px rgba(22,12,31,.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Viewport Shell (393px typical layout container) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-24 shadow-2xl overflow-x-hidden">
+<!-- Top Safe Area Buffer (~54px) -->
+<div class="h-[54px] w-full shrink-0 flex items-end justify-between px-margin pb-1">
+<span class="text-xs font-semibold text-text-primary tracking-tight">9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Header Section -->
+<header class="px-margin pt-1 pb-3 flex items-center justify-between">
+<h1 class="font-display text-display text-text-primary">Explore</h1>
+<button class="relative w-10 h-10 rounded-full bg-surface soft-shadow border border-border-hairline flex items-center justify-center text-text-primary hover:bg-surface-alt transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-live-red border-2 border-surface"></span>
+</button>
+</header>
+<!-- Search Input Section -->
+<div class="px-margin mb-3">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-[20px] text-text-tertiary pointer-events-none" data-icon="search">search</span>
+<input class="w-full h-11 pl-11 pr-4 bg-surface text-label font-label rounded-xl border border-control-border placeholder-text-tertiary focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all shadow-sm" placeholder="Search creators, streams, tags" type="text"/>
+</div>
+</div>
+<!-- Category Chips Horizontal Scroll -->
+<div class="w-full overflow-x-auto no-scrollbar py-2 mb-4">
+<div class="flex items-center space-x-2 px-margin whitespace-nowrap">
+<button class="px-4 py-1.5 rounded-full bg-accent-fill text-on-primary font-caption text-caption font-semibold shadow-sm transition-transform active:scale-95">
+          All
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Music
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Gaming
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Cooking
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Fitness
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Talk
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Travel
+        </button>
+<button class="px-4 py-1.5 rounded-full bg-accent-tint text-accent-fill font-caption text-caption font-semibold hover:bg-surface-alt transition-colors active:scale-95">
+          Art
+        </button>
+</div>
+</div>
+<!-- Focal Section: Trending (Horizontal Carousel) -->
+<section class="mb-7">
+<div class="px-margin flex items-baseline justify-between mb-3">
+<div class="flex items-center space-x-2">
+<h2 class="font-title text-title text-text-primary">Trending</h2>
+<span class="px-2 py-0.5 rounded-full bg-accent-tint text-accent-fill font-caption text-[11px] font-bold">14.2K LIVE</span>
+</div>
+<button class="font-label text-caption font-semibold text-primary-container hover:text-accent-pressed">
+          View all
+        </button>
+</div>
+<div class="w-full overflow-x-auto no-scrollbar pl-margin flex space-x-3.5 pr-margin">
+<!-- Stream Card 1 (Art) -->
+<article class="relative flex-shrink-0 w-[230px] aspect-[3/4] rounded-[20px] overflow-hidden soft-shadow group select-none">
+<img alt="Woman painting in art studio" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFNGbv2cSYGDSpx2RSXU7yA1X-YJ28zE1PKaBkVfinrv43qYStmPF1YabG5ySI13PgzfJ2EqvCplnVQaE9GhUnP-RCNg-PydtaCjo4ERIIq6t4lAhNvI3j5oLrsxrVzRPAwJh_I10jHABH4DZvFEaBojHW6d-5UNAoFqOTgGDUqgZfgDsYUktd9evV48kY6XjF9MU0sGeC3mE0YcbX2ZWF0Ay1wJOHxBagKFbI4PPeF5DcURRoP3m217obHaD9uiWao4E7vHT9VtY"/>
+<!-- Top Badges -->
+<div class="absolute top-3 left-3 flex items-center bg-live-red px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary mr-1.5 animate-pulse"></span>
+<span class="font-caption text-[11px] font-bold text-on-primary tracking-wide">LIVE</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center bg-video-overlay backdrop-blur-md px-2.5 py-1 rounded-full text-on-primary text-[11px] font-caption font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="visibility">visibility</span>
+<span>2.4K</span>
+</div>
+<!-- Bottom Scrim Overlay -->
+<div class="absolute inset-x-0 bottom-0 pt-16 pb-3.5 px-3.5 bg-gradient-to-t from-[rgba(22,12,31,0.92)] via-[rgba(22,12,31,0.65)] to-transparent flex flex-col justify-end text-on-primary">
+<h3 class="font-label text-label font-bold text-on-primary leading-tight line-clamp-1 mb-2">Live Oil Painting: City Twilight</h3>
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-full ring-1 ring-border-hairline overflow-hidden flex-shrink-0 bg-surface-alt">
+<img alt="Sofia Chen avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X5VCC8ynqduZDzPUWI6oe7gv5pzqub1nyxASlq8YugtDmGviaPP_gFM6UOIPPdXIb7GL_J_iZmWnlPj06vXSmNXg__9nSWd1j29OYhmVEJr7zvRXxEBF5IMO2wXHHPryInVnv2BY5aVbC2tL2AS3UL6sNPVJ6qmdSkkb9SZ87OSni5A9pGd0BGaVMBzK7tLvUgPadua3tq1Yvt03ilh98VC8w-QzYHDMYxNbo3Qps8kbU48BoE8wzwtQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption text-[12px] font-semibold text-on-primary truncate">Sofia Chen</span>
+<span class="font-caption text-[10px] text-surface-variant truncate opacity-80">Art &amp; Studio</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Stream Card 2 (Cooking) -->
+<article class="relative flex-shrink-0 w-[230px] aspect-[3/4] rounded-[20px] overflow-hidden soft-shadow group select-none">
+<img alt="Chef plating gourmet dish" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAanGTk1GUrQiiHTs_xOl3nJ8ZfQAm_jAGXGcO4o5w7oyMPK9nB27_lZCCYwkjNrjLshCE1U6aOlfSRnmpuDCJBy6xNTPo028C5T2WX9f5XwvdKk1nfWRi0WwvKFse-2tDz2teDyTYYbhr5gp85CkEPdNusbT5J_uZwFsPCXZ_0BI5oRMRfC8maUTZi2M9FWK8FJoPTo7WfzqH6YqBQKBfKkxx-Tdqar4wywgamKmomJm7s5HVW1qiQY7MUMALjazSIqET_mHK6e9k"/>
+<!-- Top Badges -->
+<div class="absolute top-3 left-3 flex items-center bg-live-red px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary mr-1.5 animate-pulse"></span>
+<span class="font-caption text-[11px] font-bold text-on-primary tracking-wide">LIVE</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center bg-video-overlay backdrop-blur-md px-2.5 py-1 rounded-full text-on-primary text-[11px] font-caption font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="visibility">visibility</span>
+<span>1.8K</span>
+</div>
+<!-- Bottom Scrim Overlay -->
+<div class="absolute inset-x-0 bottom-0 pt-16 pb-3.5 px-3.5 bg-gradient-to-t from-[rgba(22,12,31,0.92)] via-[rgba(22,12,31,0.65)] to-transparent flex flex-col justify-end text-on-primary">
+<h3 class="font-label text-label font-bold text-on-primary leading-tight line-clamp-1 mb-2">Omakase Plating &amp; Kitchen Prep</h3>
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-full ring-1 ring-border-hairline overflow-hidden flex-shrink-0 bg-surface-alt">
+<img alt="Marco Ruiz avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UEr_YIiG521zh1IxZTvgE4zRrMuN36HtcVKVB7K-VjQnChB1UP5OJje41CxSoTSvaZmguyANv9iyCuxwQ7zXBU2zIqUbF1UoQqQbRWehCj8WUC95k0WIbdaBnhbT79hlJT30lvxYjLDQlujPDfZbfEY6UDn9OhDK0rXQhlrqyD_lv5ddT6Qtn8NWb-fQY1OlgJfOwzDO9egVF1KSsH9362Qybjn7Gnho4hc54Q4a1SSdEASchMNMENCQ0"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption text-[12px] font-semibold text-on-primary truncate">Marco Ruiz</span>
+<span class="font-caption text-[10px] text-surface-variant truncate opacity-80">Culinary</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Stream Card 3 (Music) -->
+<article class="relative flex-shrink-0 w-[230px] aspect-[3/4] rounded-[20px] overflow-hidden soft-shadow group select-none">
+<img alt="Street musician saxophone at night" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAziN1jTx2JD4hKL-DExTePa_YOaDQjDNGmIV1W8nydFZ8pPiWJ8H1tr8R9-ASHANj2jaQeKLGS9nWpQjHhofUKP2UUWI8wDXDE7kB21rFzdE-TxLf-w33EkRpmUZwLOc-UGcNgMuk-h161HuPMSFIX9P8_ze5W2YjrFlMEODJ6Cc3DGUuMq0qkgz9SsswFBxxBJEjvUKXArPIrzSqNyItAynVT-MiwhjKkXB0pxjodadwWQG4132EQGXVzpBH52XrYaCZvnIFv3A"/>
+<!-- Top Badges -->
+<div class="absolute top-3 left-3 flex items-center bg-live-red px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary mr-1.5 animate-pulse"></span>
+<span class="font-caption text-[11px] font-bold text-on-primary tracking-wide">LIVE</span>
+</div>
+<div class="absolute top-3 right-3 flex items-center bg-video-overlay backdrop-blur-md px-2.5 py-1 rounded-full text-on-primary text-[11px] font-caption font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="visibility">visibility</span>
+<span>940</span>
+</div>
+<!-- Bottom Scrim Overlay -->
+<div class="absolute inset-x-0 bottom-0 pt-16 pb-3.5 px-3.5 bg-gradient-to-t from-[rgba(22,12,31,0.92)] via-[rgba(22,12,31,0.65)] to-transparent flex flex-col justify-end text-on-primary">
+<h3 class="font-label text-label font-bold text-on-primary leading-tight line-clamp-1 mb-2">Midnight Jazz &amp; Soul Improvisation</h3>
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 rounded-full ring-1 ring-border-hairline overflow-hidden flex-shrink-0 bg-surface-alt flex items-center justify-center text-[10px] font-bold text-accent-fill bg-accent-tint">
+                SO
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-caption text-[12px] font-semibold text-on-primary truncate">Sam Okafor</span>
+<span class="font-caption text-[10px] text-surface-variant truncate opacity-80">Live Music</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Section: Top Categories -->
+<section class="px-margin mb-7">
+<div class="flex items-baseline justify-between mb-3.5">
+<h2 class="font-title text-title text-text-primary">Top categories</h2>
+<a class="font-label text-label font-semibold text-primary-container hover:text-accent-pressed" href="#see-all">See all</a>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Tile 1: Music -->
+<div class="relative h-[132px] rounded-[20px] overflow-hidden soft-shadow group cursor-pointer">
+<img alt="Acoustic session" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UVD6p4bPvymkCtMxhLYLAF00yxBWva_WHFM1lPaT8FTM_8XFIjdQy-hY26z4Khkd68EaADPwMl8nxt0NXTMPgMh8NlJtf30ACVUnEygnhVnsKdVCWMo7oknLqLj8e0AHFyOjtDx0YEDQ406W9Fu-v96trOBs_zKCb2AlvEOPVtO4sLYRODDTtooZQARn3f5_2A_Fj2bs0OU7X2jUB0OICsgreV3uj2bn6m-gMTFZ3F2hME0LeHss8waNQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[rgba(22,12,31,0.85)] via-[rgba(22,12,31,0.40)] to-transparent"></div>
+<div class="absolute inset-0 p-3.5 flex flex-col justify-between items-start text-on-primary">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-[11px] font-bold shadow-sm">
+              1.2K live
+            </span>
+<div>
+<p class="font-title text-[17px] font-bold text-on-primary leading-snug">Music</p>
+</div>
+</div>
+</div>
+<!-- Tile 2: Cooking -->
+<div class="relative h-[132px] rounded-[20px] overflow-hidden soft-shadow group cursor-pointer">
+<img alt="Chef cooking fresh pasta" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue74jc3SwA_vL9ma7AHUWAhyeS1gX7NUhU1BiepliKWwepvoAA4dmZW-ADGSFzY8ygXzp5WySA-nTi_nXjTI_FW0CHA6HWYDoxIu0tqedfHKah7tQoUslZSXyFNM5OerlqUtF0KDx0OP3FYzlp70QuWYoZoMaF83WATu6bxq6uk_mWEOJo8ihkbN4AWvp5NKmy8pkZ3xONZBorXNH391HePA_r1EgNhR4VBvKJX9ngv9HHghqUCizcWik"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[rgba(22,12,31,0.85)] via-[rgba(22,12,31,0.40)] to-transparent"></div>
+<div class="absolute inset-0 p-3.5 flex flex-col justify-between items-start text-on-primary">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-text-primary font-caption text-[11px] font-bold shadow-sm">
+              640 live
+            </span>
+<div>
+<p class="font-title text-[17px] font-bold text-on-primary leading-snug">Cooking</p>
+</div>
+</div>
+</div>
+<!-- Tile 3: Fitness -->
+<div class="relative h-[132px] rounded-[20px] overflow-hidden soft-shadow group cursor-pointer">
+<img alt="Gym workout kettlebell" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XHH1R5MwMv8qPCw4prcdgwbD_fTaga4PqCOoWZmqHo-wOW7cv96qD-gCHx5fhHY5jz13-uXmeITuQqgfXnwWLqiE9rUmzoWBLF-8O_vCW6lZkXfNyS22y78VXUMWpETnqszKg1wqNDoI6-14HbxNb8CBC9cHf1GO217DtYIbJvjFkPAOwVPHeO7ydWTcOF4SBCBuq1b9mE3vZo2JuOeeNoD0jYn0RWfGdcjOebqLy3GvtHGOG5hIMDhJ4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[rgba(22,12,31,0.85)] via-[rgba(22,12,31,0.40)] to-transparent"></div>
+<div class="absolute inset-0 p-3.5 flex flex-col justify-between items-start text-on-primary">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-text-primary font-caption text-[11px] font-bold shadow-sm">
+              410 live
+            </span>
+<div>
+<p class="font-title text-[17px] font-bold text-on-primary leading-snug">Fitness</p>
+</div>
+</div>
+</div>
+<!-- Tile 4: Travel -->
+<div class="relative h-[132px] rounded-[20px] overflow-hidden soft-shadow group cursor-pointer">
+<img alt="Lisbon yellow tram" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1VCYFsbwB0rGIfhlEykgaZe12sF1rzTAxeFoXlfy9jvzrZ82hj3sDy2iUcvFaoFCTuLd6E00tS_TPShJyfDj8Y103wzd6y8eXQ51mEJ1cZ4ep3l6DkdRelkMGCpOFGACpDZUQoWrFjhjnCVBj9z_FQY7Jhf6g4XnT3wO-Prr5SkGsiQsG2DhbkpfeGTTsooc9SJcwQBRiullytwO9T0XSu-jd3JLSHj1in7-NWMbxQN7CZeWYyy7etvrS0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[rgba(22,12,31,0.85)] via-[rgba(22,12,31,0.40)] to-transparent"></div>
+<div class="absolute inset-0 p-3.5 flex flex-col justify-between items-start text-on-primary">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-text-primary font-caption text-[11px] font-bold shadow-sm">
+              280 live
+            </span>
+<div>
+<p class="font-title text-[17px] font-bold text-on-primary leading-snug">Travel</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Rising Creators -->
+<section class="px-margin mb-6">
+<h2 class="font-title text-title text-text-primary mb-3">Rising creators</h2>
+<!-- Creator Row 1 -->
+<div class="bg-surface rounded-[20px] p-3.5 mb-2.5 soft-shadow border border-border-hairline flex items-center justify-between">
+<div class="flex items-center space-x-3 min-w-0">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-accent-tint">
+<img alt="Aiko Tan profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X5VCC8ynqduZDzPUWI6oe7gv5pzqub1nyxASlq8YugtDmGviaPP_gFM6UOIPPdXIb7GL_J_iZmWnlPj06vXSmNXg__9nSWd1j29OYhmVEJr7zvRXxEBF5IMO2wXHHPryInVnv2BY5aVbC2tL2AS3UL6sNPVJ6qmdSkkb9SZ87OSni5A9pGd0BGaVMBzK7tLvUgPadua3tq1Yvt03ilh98VC8w-QzYHDMYxNbo3Qps8kbU48BoE8wzwtQ"/>
+</div>
+<div class="min-w-0">
+<h4 class="font-title text-[15px] font-semibold text-text-primary truncate">Aiko Tan</h4>
+<p class="font-caption text-caption text-text-tertiary truncate">Art &amp; Illustration • 18.3K followers</p>
+</div>
+</div>
+<button class="flex-shrink-0 ml-3 bg-surface border-[1.5px] border-primary-container text-accent-fill font-label text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-accent-tint transition-all active:scale-95 shadow-sm">
+          Follow
+        </button>
+</div>
+<!-- Creator Row 2 -->
+<div class="bg-surface rounded-[20px] p-3.5 mb-2.5 soft-shadow border border-border-hairline flex items-center justify-between">
+<div class="flex items-center space-x-3 min-w-0">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-accent-tint">
+<img alt="Marco Ruiz profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UEr_YIiG521zh1IxZTvgE4zRrMuN36HtcVKVB7K-VjQnChB1UP5OJje41CxSoTSvaZmguyANv9iyCuxwQ7zXBU2zIqUbF1UoQqQbRWehCj8WUC95k0WIbdaBnhbT79hlJT30lvxYjLDQlujPDfZbfEY6UDn9OhDK0rXQhlrqyD_lv5ddT6Qtn8NWb-fQY1OlgJfOwzDO9egVF1KSsH9362Qybjn7Gnho4hc54Q4a1SSdEASchMNMENCQ0"/>
+</div>
+<div class="min-w-0">
+<h4 class="font-title text-[15px] font-semibold text-text-primary truncate">Marco Ruiz</h4>
+<p class="font-caption text-caption text-text-tertiary truncate">Artisanal Cooking • 34.6K followers</p>
+</div>
+</div>
+<button class="flex-shrink-0 ml-3 bg-surface border-[1.5px] border-primary-container text-accent-fill font-label text-[13px] font-semibold px-4 py-1.5 rounded-full hover:bg-accent-tint transition-all active:scale-95 shadow-sm">
+          Follow
+        </button>
+</div>
+</section>
+<!-- Bottom Tab Bar (Fixed Component - Shell Mapping Exact Requirements) -->
+<!-- Matches JSON: BottomNavBar with exact 5 destinations: Home, Explore (ACTIVE), Go Live, Wallet, Profile -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto h-16 bg-surface border-t border-border-hairline flex justify-around items-center z-50 pb-safe">
+<!-- 1. Home -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors duration-150 py-1 flex-1 active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-caption text-[12px] mt-0.5">Home</span>
+</a>
+<!-- 2. Explore (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 flex-1 active:scale-95" href="#explore">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] mt-0.5">Explore</span>
+</a>
+<!-- 3. Go Live -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 flex-1 active:scale-95 group" href="#golive">
+<div class="w-10 h-10 -mt-2 bg-accent-fill rounded-full flex items-center justify-center shadow-md group-hover:bg-accent-pressed transition-colors">
+<span class="material-symbols-outlined text-[22px] text-on-primary" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] mt-0.5 text-text-tertiary">Go Live</span>
+</a>
+<!-- 4. Wallet -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors duration-150 py-1 flex-1 active:scale-95" href="#wallet">
+<span class="material-symbols-outlined text-[24px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] mt-0.5">Wallet</span>
+</a>
+<!-- 5. Profile -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary transition-colors duration-150 py-1 flex-1 active:scale-95" href="#profile">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-[12px] mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- Safe Area Home Indicator -->
+<div class="fixed bottom-1 left-0 right-0 max-w-[393px] mx-auto flex justify-center pointer-events-none z-50">
+<div class="w-32 h-1 bg-on-surface/20 rounded-full"></div>
+</div>
+</div>
+</body></html>

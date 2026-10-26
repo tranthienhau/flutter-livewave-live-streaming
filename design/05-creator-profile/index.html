@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livewave - Creator Profile</title>
+  <!-- Google Fonts: Sora & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#F8F4FC',
+              surface: '#FFFFFF',
+              surfaceAlt: '#F2EBF8',
+              accent: '#8E4BC7',
+              accentFill: '#8A43C5',
+              accentPressed: '#7D42AF',
+              accentTint: '#EEE4F7',
+              pistachio: '#A8D672',
+              textPrimary: '#160C1F',
+              textSecondary: '#54465F',
+              textTertiary: '#756B80',
+              borderHairline: '#E6DCEF',
+              live: '#DC2626',
+            }
+          },
+          fontFamily: {
+            sans: ['Sora', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Sora', sans-serif;
+      background-color: #0F0A17;
+      color: #160C1F;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Mobile container constraint 393 x 852 */
+    .mobile-frame {
+      width: 393px;
+      height: 852px;
+      max-width: 393px;
+      max-height: 852px;
+      background-color: #F8F4FC;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+      border-radius: 44px;
+    }
+
+    /* Hide scrollbar for clean app experience */
+    .scroll-content::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-content {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .soft-shadow {
+      box-shadow: 0 1px 2px rgba(22, 12, 31, 0.04), 0 8px 24px rgba(22, 12, 31, 0.06);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+
+  <div class="mobile-frame">
+    <!-- Top Status Bar Simulation -->
+    <div class="absolute top-0 left-0 w-full h-[48px] px-7 flex items-center justify-between z-30 pointer-events-none text-white font-medium text-[14px]">
+      <span>9:41</span>
+      <div class="flex items-center space-x-1.5">
+        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.32 19.57 10.61 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+        <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        <div class="w-5 h-2.5 border border-white rounded-[3px] p-[1px] flex items-center">
+          <div class="h-full w-3 bg-white rounded-[1px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrollable Profile Body -->
+    <div class="flex-1 overflow-y-auto scroll-content pb-20 relative">
+      
+      <!-- Cover Photo Header -->
+      <div class="relative w-full h-[200px] bg-neutral-900 overflow-hidden">
+        <img 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbXZ297D634kFSJSr1WIt3eWKlnyaBVNCUk-HSkap4HQyIE28ejIJPxOJ-XmzpT1cnk13u4gSbcFw38W_InWTgieLvi9aZazuDnXg-AB0CR5fYHcYNd9Kv61vkgGBeJH-KCjHowcjVeO8frpZqTO0zIZc8-ZxA_k7eGMMOO6KlixBiU1l3SDImpy6dRU82XgTLg92V8sKTiN3PQFLiNAYdjvVDY_rnTBtP8-E-U4d_iBMBV7-WCRODuJ2UoAOCxg_vn6jIdq0D-sI" 
+          alt="Lena Park Studio Cover" 
+          class="w-full h-full object-cover object-center filter brightness-[0.92]"
+        />
+        <!-- Subtle dark gradient on top for status bar legibility -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-transparent"></div>
+
+        <!-- Back Button (dark translucent fill) -->
+        <button 
+          class="absolute top-12 left-5 w-10 h-10 rounded-full bg-[rgba(22,12,31,0.55)] backdrop-blur-md flex items-center justify-center text-white active:scale-95 transition-transform"
+          aria-label="Go back"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+
+        <!-- Share / More Options Button -->
+        <button 
+          class="absolute top-12 right-5 w-10 h-10 rounded-full bg-[rgba(22,12,31,0.55)] backdrop-blur-md flex items-center justify-center text-white active:scale-95 transition-transform"
+          aria-label="Share"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Creator Header Section with Overlapping Avatar -->
+      <div class="px-5 pt-0 relative">
+        <div class="flex justify-between items-end -mt-[46px] mb-3">
+          <!-- Large Circular Avatar with #DC2626 Ring & LIVE Pill Underneath -->
+          <div class="flex flex-col items-center">
+            <div class="relative">
+              <div class="w-[84px] h-[84px] rounded-full p-[3px] bg-gradient-to-tr from-[#DC2626] to-[#EF4444] shadow-md">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1WBQSE4nJic9zAFZ6sVBVFfAHix1xaiJPRKazHOHErg_KNtvkTY6uAw2tY0li9OahEifuztXRWO6mQSZdZpxyFyW005Jc0zJquTg3I-xrwPTvlzXDTIvG7o2JilrDwY_zcWpKe9bFq-BsgoWa_tTa6zAQ3aaemnvyrhI_e6R19S_K_23juAe51tSdrQi1M09ciWdVTkxOJYXzuuDcKWFwuQPjks1qIB_jG_XVrg0kgxxxnpr7Fi-6bW_A" 
+                  alt="Lena Park" 
+                  class="w-full h-full rounded-full object-cover bg-white ring-2 ring-white"
+                />
+              </div>
+              <!-- Red LIVE Pill under avatar -->
+              <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#DC2626] text-white text-[11px] font-bold tracking-wider px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                LIVE
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick action badges (e.g. verified creator status) -->
+          <div class="flex items-center gap-2 pb-2">
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#EEE4F7] text-[#8A43C5] text-[12px] font-semibold">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5l-4-4 1.41-1.41L11 13.67l6.59-6.59L19 8.5l-8 8z"/>
+              </svg>
+              Featured Music
+            </span>
+          </div>
+        </div>
+
+        <!-- Creator Name, Handle & Bio -->
+        <div class="mt-3">
+          <div class="flex items-center gap-1.5">
+            <h1 class="text-[20px] font-semibold text-[#160C1F] leading-tight">Lena Park</h1>
+            <svg class="w-4 h-4 text-[#8A43C5]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <p class="text-[13px] text-[#756B80] font-medium mt-0.5">@lenaplays</p>
+          <p class="text-[14px] text-[#54465F] mt-2 font-normal leading-snug">
+            Acoustic covers every night 8pm 🎸 Sharing original arrangements &amp; soulful vibes.
+          </p>
+        </div>
+
+        <!-- Stats Row: 3 Columns -->
+        <div class="grid grid-cols-3 bg-white rounded-[20px] py-3.5 px-3 mt-4 text-center soft-shadow border border-[#E6DCEF]/60">
+          <div class="flex flex-col items-center">
+            <span class="text-[18px] font-bold text-[#8E4BC7] tracking-tight">48.2K</span>
+            <span class="text-[12px] text-[#756B80] font-medium mt-0.5">Followers</span>
+          </div>
+          <div class="flex flex-col items-center border-x border-[#E6DCEF]">
+            <span class="text-[18px] font-bold text-[#8E4BC7] tracking-tight">312</span>
+            <span class="text-[12px] text-[#756B80] font-medium mt-0.5">Streams</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="flex items-center gap-1">
+              <span class="text-[18px] font-bold text-[#8E4BC7] tracking-tight">4.9</span>
+              <svg class="w-3.5 h-3.5 text-[#8E4BC7] fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+            <span class="text-[12px] text-[#756B80] font-medium mt-0.5">Rating</span>
+          </div>
+        </div>
+
+        <!-- Buttons Row: Primary Pill & Secondary Outline Pill -->
+        <div class="flex items-center gap-3 mt-4">
+          <!-- Primary Pill: #8A43C5 'Watch live' with play icon -->
+          <button class="flex-1 h-12 bg-[#8A43C5] hover:bg-[#7D42AF] active:scale-[0.98] transition-all rounded-full flex items-center justify-center gap-2 text-white font-semibold text-[15px] shadow-sm">
+            <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Watch live</span>
+          </button>
+
+          <!-- Secondary Outline Pill: 'Following' -->
+          <button class="flex-1 h-12 bg-white hover:bg-[#F2EBF8] active:scale-[0.98] transition-all border-[1.5px] border-[#8E4BC7] rounded-full flex items-center justify-center gap-1.5 text-[#8A43C5] font-semibold text-[15px]">
+            <svg class="w-4 h-4 stroke-[#8A43C5]" fill="none" stroke-width="2.2" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Following</span>
+          </button>
+        </div>
+
+        <!-- Card: Schedule -->
+        <div class="bg-white rounded-[20px] p-4 mt-5 soft-shadow border border-[#E6DCEF]/60">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#8E4BC7]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <h2 class="text-[15px] font-semibold text-[#160C1F]">Stream Schedule</h2>
+            </div>
+            <span class="text-[12px] font-medium text-[#8E4BC7] bg-[#EEE4F7] px-2 py-0.5 rounded-full">Weekly</span>
+          </div>
+
+          <div class="space-y-2.5">
+            <!-- Schedule Item 1 -->
+            <div class="flex items-start gap-3 p-2.5 rounded-[14px] bg-[#F2EBF8]/60">
+              <div class="w-8 h-8 rounded-full bg-[#EEE4F7] flex items-center justify-center text-[#8A43C5] shrink-0 mt-0.5">
+                <span class="text-[11px] font-bold">M</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-semibold text-[#160C1F] leading-tight">Mon 8:00 PM</p>
+                <p class="text-[12px] text-[#54465F] truncate mt-0.5">Acoustic requests &amp; chill chat</p>
+              </div>
+              <span class="text-[11px] text-[#8E4BC7] font-semibold px-2 py-1 rounded-full border border-[#8E4BC7]/30 bg-white">Remind</span>
+            </div>
+
+            <!-- Schedule Item 2 -->
+            <div class="flex items-start gap-3 p-2.5 rounded-[14px] bg-[#F2EBF8]/60">
+              <div class="w-8 h-8 rounded-full bg-[#EEE4F7] flex items-center justify-center text-[#8A43C5] shrink-0 mt-0.5">
+                <span class="text-[11px] font-bold">W</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-semibold text-[#160C1F] leading-tight">Wed 8:00 PM</p>
+                <p class="text-[12px] text-[#54465F] truncate mt-0.5">Songwriting session &amp; new chord ideas</p>
+              </div>
+              <span class="text-[11px] text-[#8E4BC7] font-semibold px-2 py-1 rounded-full border border-[#8E4BC7]/30 bg-white">Remind</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Past Streams -->
+        <div class="mt-5 pb-4">
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-[16px] font-semibold text-[#160C1F]">Past streams</h2>
+            <button class="text-[13px] font-semibold text-[#8E4BC7] hover:underline">View all</button>
+          </div>
+
+          <!-- 2-Column Replay Thumbnails -->
+          <div class="grid grid-cols-2 gap-3">
+            <!-- Replay Card 1 -->
+            <div class="bg-white rounded-[20px] overflow-hidden soft-shadow border border-[#E6DCEF]/60 flex flex-col group cursor-pointer">
+              <div class="relative w-full aspect-[4/3] bg-neutral-800 overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1UVD6p4bPvymkCtMxhLYLAF00yxBWva_WHFM1lPaT8FTM_8XFIjdQy-hY26z4Khkd68EaADPwMl8nxt0NXTMPgMh8NlJtf30ACVUnEygnhVnsKdVCWMo7oknLqLj8e0AHFyOjtDx0YEDQ406W9Fu-v96trOBs_zKCb2AlvEOPVtO4sLYRODDTtooZQARn3f5_2A_Fj2bs0OU7X2jUB0OICsgreV3uj2bn6m-gMTFZ3F2hME0LeHss8waNQ" 
+                  alt="Acoustic Sunday Jam" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <!-- Duration Badge -->
+                <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-[6px] bg-[rgba(22,12,31,0.7)] text-white text-[11px] font-medium tracking-tight">
+                  1:24:10
+                </span>
+                <!-- Mini replay icon -->
+                <span class="absolute top-2 left-2 w-6 h-6 rounded-full bg-[rgba(22,12,31,0.55)] flex items-center justify-center text-white">
+                  <svg class="w-3 h-3 fill-white ml-0.5" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </span>
+              </div>
+              <div class="p-2.5">
+                <h3 class="text-[13px] font-semibold text-[#160C1F] line-clamp-1 leading-tight">Acoustic Sunday Jam</h3>
+                <div class="flex items-center justify-between mt-1 text-[11px] text-[#756B80]">
+                  <span>12K views</span>
+                  <span>2d ago</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Replay Card 2 -->
+            <div class="bg-white rounded-[20px] overflow-hidden soft-shadow border border-[#E6DCEF]/60 flex flex-col group cursor-pointer">
+              <div class="relative w-full aspect-[4/3] bg-neutral-800 overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE31Aa9Gd7xc_C5rT5l41eZWt1rvEoUuqSYigDtdnth4tpD3opk3SpC1bq65X2jus9r5vsXWSHL3B3K6ww6HgwoF0Gxhq6-NUiG7cbrd50REMbKzCwHTV1yuTfNzlK-TFU-13k3lTJSciQbu8SFFVst0lJqkY28H5DssuaD01uJVFVPP1k1In515FJmSjXOjbzhFo6AZ4SBLyxOBPEavQdOe0tChDQrRRR3AlsfzWYRfSNahitI4Z4fTmIERusq18M78cx1vOVGeQ" 
+                  alt="Piano & Vocal Session" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <!-- Duration Badge -->
+                <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded-[6px] bg-[rgba(22,12,31,0.7)] text-white text-[11px] font-medium tracking-tight">
+                  48:32
+                </span>
+                <!-- Mini replay icon -->
+                <span class="absolute top-2 left-2 w-6 h-6 rounded-full bg-[rgba(22,12,31,0.55)] flex items-center justify-center text-white">
+                  <svg class="w-3 h-3 fill-white ml-0.5" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </span>
+              </div>
+              <div class="p-2.5">
+                <h3 class="text-[13px] font-semibold text-[#160C1F] line-clamp-1 leading-tight">Piano Melodies &amp; Chat</h3>
+                <div class="flex items-center justify-between mt-1 text-[11px] text-[#756B80]">
+                  <span>8.4K views</span>
+                  <span>4d ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Tab Bar (Fixed docked 5 tabs: Home, Explore, Go Live, Wallet, Profile) -->
+    <!-- The Explore tab is active in accent #8E4BC7, the others in #756B80 -->
+    <nav class="absolute bottom-0 left-0 w-full h-[68px] bg-white border-t border-[#E6DCEF] flex items-center justify-around px-2 z-40 pb-2">
+      <!-- 1. Home -->
+      <button class="flex flex-col items-center justify-center w-14 text-[#756B80] active:scale-95 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="text-[11px] font-medium mt-1">Home</span>
+      </button>
+
+      <!-- 2. Explore (Active in accent #8E4BC7) -->
+      <button class="flex flex-col items-center justify-center w-14 text-[#8E4BC7] active:scale-95 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        <span class="text-[11px] font-semibold mt-1">Explore</span>
+      </button>
+
+      <!-- 3. Go Live (white broadcast icon inside small #8A43C5 circle) -->
+      <button class="flex flex-col items-center justify-center w-14 active:scale-95 transition-transform">
+        <div class="w-10 h-10 rounded-full bg-[#8A43C5] flex items-center justify-center text-white shadow-sm -mt-2">
+          <svg class="w-5 h-5 stroke-white" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M4.93 19.07a10 10 0 0 1 0-14.14"></path>
+            <path d="M7.76 16.24a6 6 0 0 1 0-8.48"></path>
+            <circle cx="12" cy="12" r="2" fill="white"></circle>
+            <path d="M16.24 7.76a6 6 0 0 1 0 8.48"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-[#756B80] mt-0.5">Go Live</span>
+      </button>
+
+      <!-- 4. Wallet -->
+      <button class="flex flex-col items-center justify-center w-14 text-[#756B80] active:scale-95 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+          <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+          <path d="M18 12a2 2 0 0 0 0 4h4v-4z"></path>
+        </svg>
+        <span class="text-[11px] font-medium mt-1">Wallet</span>
+      </button>
+
+      <!-- 5. Profile -->
+      <button class="flex flex-col items-center justify-center w-14 text-[#756B80] active:scale-95 transition-transform">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="text-[11px] font-medium mt-1">Profile</span>
+      </button>
+    </nav>
+
+    <!-- iOS Home Indicator bar -->
+    <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-[#160C1F]/20 rounded-full z-50 pointer-events-none"></div>
+
+  </div>
+
+</body>
+</html>
+

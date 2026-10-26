@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Livewave - Home</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#dfb7ff",
+            "on-primary-fixed-variant": "#661e9e",
+            "primary-fixed-dim": "#dfb7ff",
+            "tertiary-fixed": "#ffdf92",
+            "primary": "#742fac",
+            "surface-dim": "#e1d7e2",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#4c4452",
+            "secondary": "#426910",
+            "on-secondary-container": "#466d15",
+            "on-surface": "#1f1a22",
+            "text-primary": "#160C1F",
+            "secondary-fixed": "#c2f18a",
+            "control-border": "#AE87B7",
+            "inverse-surface": "#342e37",
+            "surface-container-high": "#efe5f0",
+            "error": "#ba1a1a",
+            "accent-tint": "#EEE4F7",
+            "on-error": "#ffffff",
+            "support-strong": "#6EA22E",
+            "outline": "#7e7383",
+            "on-tertiary": "#ffffff",
+            "text-tertiary": "#756B80",
+            "success-text": "#0E7C3A",
+            "secondary-fixed-dim": "#a7d471",
+            "on-primary-fixed": "#2d004f",
+            "surface-container": "#f5ebf6",
+            "warning-fill": "#FAEFE1",
+            "success-fill": "#E3F4E9",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "on-secondary-fixed": "#0f2000",
+            "text-secondary": "#54465F",
+            "surface": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "on-tertiary-container": "#503d00",
+            "on-error-container": "#93000a",
+            "surface-variant": "#e9dfeb",
+            "on-background": "#1f1a22",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#241a00",
+            "live-red": "#DC2626",
+            "primary-fixed": "#f1daff",
+            "background": "#F8F4FC",
+            "danger-text": "#CE2020",
+            "tertiary-container": "#cba744",
+            "on-secondary": "#ffffff",
+            "primary-container": "#8e4bc7",
+            "on-primary-container": "#f9e9ff",
+            "surface-bright": "#fff7fd",
+            "outline-variant": "#cfc2d4",
+            "surface-tint": "#7f3cb8",
+            "tertiary": "#755b00",
+            "border-hairline": "#E6DCEF",
+            "inverse-on-surface": "#f8eef9",
+            "danger-fill": "#FBE5E5",
+            "accent-pressed": "#7D42AF",
+            "surface-container-low": "#fbf0fc",
+            "accent-fill": "#8A43C5",
+            "on-tertiary-fixed-variant": "#594400",
+            "warning-text": "#A75906",
+            "surface-alt": "#F2EBF8",
+            "secondary-container": "#bfee87",
+            "tertiary-fixed-dim": "#e8c25c",
+            "surface-container-highest": "#e9dfeb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-md": "12px",
+            "space-lg": "16px"
+          },
+          "fontFamily": {
+            "title": ["Sora"],
+            "display": ["Syne"],
+            "caption": ["Sora"],
+            "body": ["Sora"],
+            "label": ["Sora"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(22,12,31,.04), 0 8px 24px rgba(22,12,31,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Sora', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Viewport Shell (393px width constraint on desktop) -->
+<main class="w-full max-w-[393px] bg-background min-h-screen relative flex flex-col shadow-2xl">
+<!-- Top Status Bar Area Spacer -->
+<div class="h-11 w-full shrink-0"></div>
+<!-- Sticky Header -->
+<header class="sticky top-0 z-40 bg-background/95 backdrop-blur-md px-margin py-2 flex items-center justify-between">
+<!-- Left: User Profile & Brand Indicator -->
+<div class="flex items-center gap-3">
+<div class="relative cursor-pointer group active:scale-95 transition-transform duration-150">
+<img alt="Maya Chen" class="w-9 h-9 rounded-full object-cover ring-2 ring-border-hairline shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB789hA8zOCeUNQJwSUNj4rv7avuuJpdFHxxRBLjErtkKdxcLfrb66VDc2nsAb1DBryaT3q6fzAycHKhFqUiu8LqgDdtp-mBt50WrsVV2x8mbrRhqhwRTpHw5QTpo9WWs6hFETRQaIhv3QWvJmusvwOH8yKsD_onLasIk9tnoEd7QSS6GOq5cFyT0Tq-0m_Qwg5gWogoKeiXqdw63yFHVZNhFu9kNXP_7DH3-YtslJdgOezlfPzOoqqnymO-ADYohOBHXRbPyNrVbw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-support-strong border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h1 class="font-title text-title text-text-primary tracking-tight">Hi, Maya</h1>
+<img alt="Livewave" class="w-4 h-4 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VY-kEhzb24K6TEt7mG69hR9ZtQ1j9KfCTTwljf807c9haJqDNMly9HYu2jIKH2kVmPa19qhE_B0xnMbcfMM2ilH9Uy6a6uRNIn0UxC1ekel_ZI69rqDMnlU3MTR9aPDn8DHGreySeet_Hb4LeQjGqYD4deCsyhCiSrOQSfMi3gJQIS43P5kivnmVpanZbSOfzyCjg7uCRl8bKMNBIVjhJVYvrcMeSxNz_a7ERcFjpvOXn5SfUWpsOG6w"/>
+</div>
+</div>
+</div>
+<!-- Right: Action Icons -->
+<div class="flex items-center gap-1">
+<button aria-label="Search" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 relative transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-live-red rounded-full ring-2 ring-background"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="flex-1 px-margin pt-2 pb-24 space-y-6 overflow-y-auto no-scrollbar">
+<!-- FOCAL SECTION: Featured Live Card -->
+<section class="w-full">
+<div class="relative w-full h-[220px] rounded-[20px] overflow-hidden shadow-soft cursor-pointer group active:scale-[0.99] transition-all duration-200">
+<!-- Live Background Photo -->
+<img alt="DJ Kairo live stream" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD21OiFxmCu6P9OgaIf_zMJipdGNHkXWor-zQTfYEQrmUo8gCRf8xlIrkDzLxwWWnpMmC-JCb5EjDV_ROq1PzG_PSLHU8c9FOzY_qI-QuK446VsDjvle8gEu3n0S-kK0MWyeE6D8VGhH2_nmD7MPRcsrhGYVR0VH0WY36Zg94OtyOS-OPh1olIpxsQxoI1dBImC7UWftl2pOvz4aaSZXXtAMj37-GIiMkaU8hc_ZcJti2NaJ9-pW5vBQukIOh_xghEJAPkU-oEonYs"/>
+<!-- Dark Scrim Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#160C1F]/90 via-[#160C1F]/30 to-black/20"></div>
+<!-- Top Pills Container -->
+<div class="absolute top-3 inset-x-3 flex items-center justify-between z-10">
+<!-- Red LIVE Badge -->
+<div class="bg-live-red text-surface px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface animate-pulse"></span>
+<span class="font-title text-[13px] font-bold tracking-wider leading-none">LIVE</span>
+</div>
+<!-- Viewer Count Pill -->
+<div class="bg-video-overlay backdrop-blur-md text-surface px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-surface/10">
+<span class="material-symbols-outlined text-[15px] leading-none">visibility</span>
+<span class="font-caption text-[13px] font-medium leading-none">12.4K</span>
+</div>
+</div>
+<!-- Bottom Card Content Overlay -->
+<div class="absolute bottom-0 inset-x-0 p-3.5 z-10 flex flex-col gap-1.5">
+<h2 class="font-title text-[18px] text-surface font-semibold tracking-tight drop-shadow-sm leading-snug">
+              Friday Night House Set
+            </h2>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full overflow-hidden ring-1 ring-surface/40">
+<img alt="DJ Kairo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD21OiFxmCu6P9OgaIf_zMJipdGNHkXWor-zQTfYEQrmUo8gCRf8xlIrkDzLxwWWnpMmC-JCb5EjDV_ROq1PzG_PSLHU8c9FOzY_qI-QuK446VsDjvle8gEu3n0S-kK0MWyeE6D8VGhH2_nmD7MPRcsrhGYVR0VH0WY36Zg94OtyOS-OPh1olIpxsQxoI1dBImC7UWftl2pOvz4aaSZXXtAMj37-GIiMkaU8hc_ZcJti2NaJ9-pW5vBQukIOh_xghEJAPkU-oEonYs"/>
+</div>
+<span class="font-caption text-caption text-surface-container font-medium">DJ Kairo</span>
+<span class="material-symbols-outlined text-primary-fixed text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: Following - live now -->
+<section class="w-full space-y-3">
+<h3 class="font-title text-[15px] text-text-primary font-semibold tracking-tight">
+          Following - live now
+        </h3>
+<!-- Creator Story Avatars Row -->
+<div class="flex items-center gap-4 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<!-- Creator 1: Lena Park -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="relative p-0.5 rounded-full border-2 border-primary-container">
+<img alt="Lena Park" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfgTel_dqzIBFePO7rLPf5cX19i-UITd7-nQCX6ou-Hsew9E5kR7wGFyAl4lThgPdsfWdPzqo-kxrCRzwWONOp_BWuxxy0PZo2Xb5wMf-SuGE1VQNLPy6ikNAlnpgJRJXWith5RxJRL21-HRAE_cB3cXIKeyPifDKTZ-Oh1L2UB5Hio2yPESLL5BOmieDOz3aeZ6th-fSqcYMhMaPuC336CYpZoDcVrTelqBlJjKsn2sxs1JE4LsOa4sECjbv7-duKbd_GRmW598I"/>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-live-red text-surface px-1.5 py-0.2 rounded-full flex items-center gap-0.5 shadow-sm border border-surface">
+<span class="font-title text-[10px] font-bold tracking-tight leading-tight">LIVE</span>
+</div>
+</div>
+<span class="font-caption text-caption text-text-primary font-medium w-16 text-center truncate">Lena Park</span>
+</div>
+<!-- Creator 2: Marco Ruiz -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="relative p-0.5 rounded-full border-2 border-primary-container">
+<img alt="Marco Ruiz" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCzdwLN7A93AlznE6FgNtnCTTX_Y21j1N5EU9A8aP44wqKoB73nNznCtS6trARuPaYQOLCbFKNWY8qsPk80sHOHc0nE7b-T1acLPTPnvA3owaWjwnyUW_c4-ftutjPBIkrGbY-0HsIFfWmnqoriuSPAYKUPPZAe09KZc4zIsm_vNAXt48I7QPKcyHDNWVqtSUwKfnl6_JUpbiL30b9EPawbn_xJK9c3QNy-KWQei2Q7XYp3w7tmaa3OpvlEE9GqscEVpBjYiENDwI"/>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-live-red text-surface px-1.5 py-0.2 rounded-full flex items-center gap-0.5 shadow-sm border border-surface">
+<span class="font-title text-[10px] font-bold tracking-tight leading-tight">LIVE</span>
+</div>
+</div>
+<span class="font-caption text-caption text-text-primary font-medium w-16 text-center truncate">Marco Ruiz</span>
+</div>
+<!-- Creator 3: Aiko Tan -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="relative p-0.5 rounded-full border-2 border-primary-container">
+<img alt="Aiko Tan" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq6hcBDloVyvoG-WFfrMGqiOXbP0U3fO67HnATtF9VheYSRjivcJc9c6rpDlNdyevD_7DJGv_1cIVSy-TtU1ExuXN8VQ6BPyjEqukBxg3sG4NU4ROUD4lr8-Q9XnrEW4SfkHjQksFjN4UvZOhWSrAQdg_wO91vqYyyRr55Fe547posfghZhL8LH_v7bqKj2mR3zzM-pdtk1IaeKspH7_gIsRhqntkk4lb4z8o1ntqg5Lo_BS9C4cYVcLzN38HwJXHnmbdElblrn40"/>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-live-red text-surface px-1.5 py-0.2 rounded-full flex items-center gap-0.5 shadow-sm border border-surface">
+<span class="font-title text-[10px] font-bold tracking-tight leading-tight">LIVE</span>
+</div>
+</div>
+<span class="font-caption text-caption text-text-primary font-medium w-16 text-center truncate">Aiko Tan</span>
+</div>
+<!-- Creator 4: Sam Okafor -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="relative p-0.5 rounded-full border-2 border-primary-container">
+<img alt="Sam Okafor" class="w-14 h-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0o0gfzMUE6cYiaAiwLP8T_MaRo9pSMPy3x_ij3_wgHQvAj33_se5mfWQ83bJBFwmhdmfM8Pda5ly6uXXxqkuK6olWaDJck0zgVPLw9cPinFO9xf_l7CJf9bnJABlfSVrbqqRHquW6-HvQz8sjXtGTFMXqqnWemq5g1eCNjff1SvxYQoch8HyqYV_eglTg3W03fjczDmNiaJiyX2Vq9tEVUAtQMPtGQzdh1Wv6aIevnT00x8gAmH6115t4IpQDVoHmgytDAKku1Vw"/>
+<div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-live-red text-surface px-1.5 py-0.2 rounded-full flex items-center gap-0.5 shadow-sm border border-surface">
+<span class="font-title text-[10px] font-bold tracking-tight leading-tight">LIVE</span>
+</div>
+</div>
+<span class="font-caption text-caption text-text-primary font-medium w-16 text-center truncate">Sam Okafor</span>
+</div>
+</div>
+</section>
+<!-- SECTION: Live now -->
+<section class="w-full space-y-3">
+<!-- Section Bar -->
+<div class="flex justify-between items-center">
+<h3 class="font-title text-[18px] text-text-primary font-semibold tracking-tight">Live now</h3>
+<button class="text-primary-container font-label text-label font-semibold hover:text-accent-fill transition-colors" type="button">See all</button>
+</div>
+<!-- 2-Column Stream Card Grid -->
+<div class="grid grid-cols-2 gap-3 pb-6">
+<!-- Card 1: Artisanal Handmade Pasta -->
+<article class="flex flex-col gap-2 cursor-pointer group active:scale-[0.98] transition-transform duration-150">
+<div class="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow-soft bg-surface-alt">
+<img alt="Artisanal Handmade Pasta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu9QVlzS-V2sM1Yzlvfuj8Lplm_Yf3ECSGhMo-FhEIsV_H3HtW0K0lv-Xjm5lSYwvVzz3gdHyPKPXjdsjGmxVtFqAC_lDkhCjN2uD6dIwqZAQvlfP9a7GF1oiUbwb7VAMMKPoejRJALCgQtW3JUNU55O9zwaLKQrIUApPtZLC8QO2vaJnJBk6OwNa1cwbQeChz6EMbizfozP7bPjpYA26LZ9pmIKl1C2aOV5BjhRXJLU_hsSPTNR_7Tdbxdp_lntYLFYV6D5FkxQ8"/>
+<!-- Top Left: LIVE pill -->
+<div class="absolute top-2 left-2 bg-live-red text-surface px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+<span class="font-title text-[11px] font-bold tracking-wide leading-none">LIVE</span>
+</div>
+<!-- Top Right: Viewer pill -->
+<div class="absolute top-2 right-2 bg-video-overlay backdrop-blur-sm text-surface px-2 py-0.5 rounded-full flex items-center gap-1 border border-surface/10">
+<span class="material-symbols-outlined text-[13px] leading-none">visibility</span>
+<span class="font-caption text-[11px] font-medium leading-none">842</span>
+</div>
+</div>
+<div class="flex flex-col px-0.5">
+<h4 class="font-label text-label text-text-primary font-semibold truncate leading-tight">Artisanal Handmade Pasta</h4>
+<p class="font-caption text-caption text-text-secondary truncate mt-0.5">Marco Ruiz</p>
+</div>
+</article>
+<!-- Card 2: Acoustic Sunday Jam -->
+<article class="flex flex-col gap-2 cursor-pointer group active:scale-[0.98] transition-transform duration-150">
+<div class="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow-soft bg-surface-alt">
+<img alt="Acoustic Sunday Jam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIfnDVDvJubhz4dAp5jQTcjHf_OgGgQJf9Ql4yccCYKJnWWXUr00QVJc93iPR4zp-DqrfLk3CB9qe0MkdemdvrIQp5GHKqQcb8VwkHk2C70SIKuNrKnsBc-mEKLNuZro-22EXUTj7yjlwjgUC3TYxec8e7bilSQyT1Y2c71kO4Cnt3DL-8YF81UZds1cjWcdLUVce7yWy8RUsrlwf-9Q7gYBSSWDlGL13lzLkrZSKx0mONpXTEsAXuUwaai4cTfOsYYYRLrMZU738"/>
+<!-- Top Left: LIVE pill -->
+<div class="absolute top-2 left-2 bg-live-red text-surface px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+<span class="font-title text-[11px] font-bold tracking-wide leading-none">LIVE</span>
+</div>
+<!-- Top Right: Viewer pill -->
+<div class="absolute top-2 right-2 bg-video-overlay backdrop-blur-sm text-surface px-2 py-0.5 rounded-full flex items-center gap-1 border border-surface/10">
+<span class="material-symbols-outlined text-[13px] leading-none">visibility</span>
+<span class="font-caption text-[11px] font-medium leading-none">2.4K</span>
+</div>
+</div>
+<div class="flex flex-col px-0.5">
+<h4 class="font-label text-label text-text-primary font-semibold truncate leading-tight">Acoustic Sunday Jam</h4>
+<p class="font-caption text-caption text-text-secondary truncate mt-0.5">Aiko Tan</p>
+</div>
+</article>
+<!-- Card 3: Full Body Kettlebell HIIT -->
+<article class="flex flex-col gap-2 cursor-pointer group active:scale-[0.98] transition-transform duration-150">
+<div class="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow-soft bg-surface-alt">
+<img alt="Full Body Kettlebell HIIT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6f7fV22IpBmKMhYbjSGfOKLZ5zYKfahxn4oKgR23C6R0drJKf3x59Nvwp45z0T76YzBDi-AVzS2LsWvmv9j7eG7qzpc8b0RvXKYjOHOop4FvCYRfsa0a0n4LJXV5rbkiOS-vejvvpNajYzd-hs-5e4pTrEkHuZmmaJWcUmog8MLxzl_chtbe-hUqlQ5-73DwvNEmdDU6KaJJtv3EqeD1xK6ibMamF5bYm-lcM7cgG8x76AfpGi-64IZ9k6-TWMPze2xqJO5mQew"/>
+<!-- Top Left: LIVE pill -->
+<div class="absolute top-2 left-2 bg-live-red text-surface px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+<span class="font-title text-[11px] font-bold tracking-wide leading-none">LIVE</span>
+</div>
+<!-- Top Right: Viewer pill -->
+<div class="absolute top-2 right-2 bg-video-overlay backdrop-blur-sm text-surface px-2 py-0.5 rounded-full flex items-center gap-1 border border-surface/10">
+<span class="material-symbols-outlined text-[13px] leading-none">visibility</span>
+<span class="font-caption text-[11px] font-medium leading-none">1.1K</span>
+</div>
+</div>
+<div class="flex flex-col px-0.5">
+<h4 class="font-label text-label text-text-primary font-semibold truncate leading-tight">Full Body Kettlebell HIIT</h4>
+<p class="font-caption text-caption text-text-secondary truncate mt-0.5">Sam Okafor</p>
+</div>
+</article>
+<!-- Card 4: Lisbon Sunset Walking Tour -->
+<article class="flex flex-col gap-2 cursor-pointer group active:scale-[0.98] transition-transform duration-150">
+<div class="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden shadow-soft bg-surface-alt">
+<img alt="Lisbon Sunset Walking Tour" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_2s7o1sPfJNWuVbqpfA7oioNmbEVTPzjGv-zqAoMy5wLD5iX1hrw87qRuyTj5MOJev7ZAJT-mFTZ3Mr-eEuwbloj8O1XtvZ4h-wpjwb2FJj1mZDVvNF5gGaQjWwX0GU14Ks0PzVW790iwLwnb3ORA51FoIQWQ3_v9ELZ5G4NwESdPDG3M9RV1ZJxjy1-h9rl3M4svfXGTbg9dfD8x_RfmubZzXIwt--xY_G0Wr0knqPYXp1moHpmBXHsPh4Vthpbkoc79F6GQpc"/>
+<!-- Top Left: LIVE pill -->
+<div class="absolute top-2 left-2 bg-live-red text-surface px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface"></span>
+<span class="font-title text-[11px] font-bold tracking-wide leading-none">LIVE</span>
+</div>
+<!-- Top Right: Viewer pill -->
+<div class="absolute top-2 right-2 bg-video-overlay backdrop-blur-sm text-surface px-2 py-0.5 rounded-full flex items-center gap-1 border border-surface/10">
+<span class="material-symbols-outlined text-[13px] leading-none">visibility</span>
+<span class="font-caption text-[11px] font-medium leading-none">530</span>
+</div>
+</div>
+<div class="flex flex-col px-0.5">
+<h4 class="font-label text-label text-text-primary font-semibold truncate leading-tight">Lisbon Sunset Walking Tour</h4>
+<p class="font-caption text-caption text-text-secondary truncate mt-0.5">Lena Park</p>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- BOTTOM TAB BAR (From Shared Components JSON & Style Guidance) -->
+<nav aria-label="Primary Navigation" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] z-50 flex justify-around items-center h-16 bg-surface border-t border-border-hairline shadow-soft">
+<!-- 1. Home (Active) -->
+<button class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 active:scale-95 transition-transform duration-100 flex-1" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-caption text-[12px] leading-none mt-1">Home</span>
+</button>
+<!-- 2. Explore (Inactive) -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary py-1 active:scale-95 transition-all duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] leading-none mt-1">Explore</span>
+</button>
+<!-- 3. Go Live (Accent Circle) -->
+<button class="flex flex-col items-center justify-center py-0.5 active:scale-95 transition-transform duration-100 flex-1 group" type="button">
+<div class="w-10 h-10 rounded-full bg-accent-fill flex items-center justify-center text-surface shadow-sm group-hover:bg-accent-pressed transition-colors">
+<span class="material-symbols-outlined text-[22px]" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary leading-none mt-0.5">Go Live</span>
+</button>
+<!-- 4. Wallet (Inactive) -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary py-1 active:scale-95 transition-all duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] leading-none mt-1">Wallet</span>
+</button>
+<!-- 5. Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-text-tertiary hover:text-primary py-1 active:scale-95 transition-all duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-caption text-[12px] leading-none mt-1">Profile</span>
+</button>
+</nav>
+</main>
+</body></html>

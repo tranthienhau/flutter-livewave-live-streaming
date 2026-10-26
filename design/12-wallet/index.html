@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Livewave - Wallet</title>
+<!-- Google Fonts: Syne & Sora -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "control-border": "#AE87B7",
+            "inverse-on-surface": "#f8eef9",
+            "warning-text": "#A75906",
+            "surface-container-lowest": "#ffffff",
+            "success-fill": "#E3F4E9",
+            "on-secondary-container": "#466d15",
+            "on-secondary-fixed": "#0f2000",
+            "surface-container-highest": "#e9dfeb",
+            "accent-fill": "#8A43C5",
+            "tertiary-fixed-dim": "#e8c25c",
+            "warning-fill": "#FAEFE1",
+            "primary-fixed": "#f1daff",
+            "text-secondary": "#54465F",
+            "on-surface": "#1f1a22",
+            "outline": "#7e7383",
+            "tertiary-container": "#cba744",
+            "tertiary-fixed": "#ffdf92",
+            "secondary-fixed-dim": "#a7d471",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "tertiary": "#755b00",
+            "error": "#ba1a1a",
+            "surface": "#FFFFFF",
+            "secondary-fixed": "#c2f18a",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#dfb7ff",
+            "live-red": "#DC2626",
+            "danger-text": "#CE2020",
+            "on-background": "#1f1a22",
+            "accent-pressed": "#7D42AF",
+            "video-overlay": "rgba(22,12,31,0.55)",
+            "on-secondary-fixed-variant": "#2e4f00",
+            "text-primary": "#160C1F",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "danger-fill": "#FBE5E5",
+            "secondary-container": "#bfee87",
+            "surface-variant": "#e9dfeb",
+            "surface-bright": "#fff7fd",
+            "surface-tint": "#7f3cb8",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#4c4452",
+            "accent-tint": "#EEE4F7",
+            "on-primary-fixed-variant": "#661e9e",
+            "on-primary-container": "#f9e9ff",
+            "surface-container-low": "#fbf0fc",
+            "primary-container": "#8e4bc7",
+            "secondary": "#426910",
+            "primary": "#742fac",
+            "on-tertiary-container": "#503d00",
+            "inverse-primary": "#dfb7ff",
+            "surface-dim": "#e1d7e2",
+            "on-primary-fixed": "#2d004f",
+            "inverse-surface": "#342e37",
+            "border-hairline": "#E6DCEF",
+            "surface-container-high": "#efe5f0",
+            "on-tertiary-fixed-variant": "#594400",
+            "surface-alt": "#F2EBF8",
+            "support-strong": "#6EA22E",
+            "on-tertiary-fixed": "#241a00",
+            "text-tertiary": "#756B80",
+            "outline-variant": "#cfc2d4",
+            "success-text": "#0E7C3A",
+            "surface-container": "#f5ebf6",
+            "background": "#F8F4FC"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "16px",
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "margin": "20px",
+            "space-sm": "8px"
+          },
+          "fontFamily": {
+            "display": ["Syne", "sans-serif"],
+            "caption": ["Sora", "sans-serif"],
+            "label": ["Sora", "sans-serif"],
+            "title": ["Sora", "sans-serif"],
+            "body": ["Sora", "sans-serif"]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(22,12,31,.04), 0 8px 24px rgba(22,12,31,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Hide scrollbars cleanly */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex items-center justify-center p-0 md:p-6 antialiased selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Device Canvas (iPhone standard viewport: 393px × 852px) -->
+<main class="w-full max-w-[393px] h-[852px] bg-background relative overflow-hidden flex flex-col shadow-2xl md:rounded-[48px] border-0 md:border-[8px] md:border-surface-container-high">
+<!-- Top Status Bar (Safe Area ~59px) -->
+<header class="pt-3 px-margin pb-1 flex justify-between items-center z-30 select-none">
+<span class="font-caption text-caption font-semibold text-text-primary tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px] leading-none" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px] leading-none" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[20px] leading-none rotate-90" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Top App Bar / Header -->
+<section class="px-margin pt-2 pb-3 flex justify-between items-center z-20">
+<h1 class="font-display text-display text-text-primary font-bold">Wallet</h1>
+<button aria-label="Transaction history" class="w-10 h-10 rounded-full bg-surface border border-border-hairline shadow-soft flex items-center justify-center text-text-secondary hover:text-primary transition-colors active:scale-95 duration-100" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+</button>
+</section>
+<!-- Scrollable Screen Body -->
+<div class="flex-1 overflow-y-auto px-margin pb-24 space-y-5">
+<!-- FOCAL BALANCE CARD -->
+<article class="relative overflow-hidden rounded-[20px] p-5 bg-gradient-to-br from-[#8A43C5] to-[#7D42AF] text-surface shadow-soft">
+<!-- Subtle Vector Coin Backing Pattern (Decorative flat vectors) -->
+<div class="absolute -right-4 -bottom-6 w-32 h-32 rounded-full border-[10px] border-white/5 pointer-events-none"></div>
+<div class="absolute right-10 -top-8 w-24 h-24 rounded-full border-[6px] border-white/5 pointer-events-none"></div>
+<!-- Top Row: Balance Label & Coin Icon -->
+<div class="flex items-start justify-between relative z-10">
+<div>
+<p class="font-caption text-caption text-surface/80 font-medium">Coin balance</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-display text-display text-surface font-bold tracking-tight">1,250</span>
+<!-- Flat 2D Vector Coin Icon with Pistachio/White Accents -->
+<div class="w-8 h-8 rounded-full bg-[#A8D672] flex items-center justify-center border-2 border-white shadow-sm flex-shrink-0">
+<span class="font-display text-[15px] font-extrabold text-text-primary leading-none">W</span>
+</div>
+</div>
+</div>
+<!-- Subtle Livewave Brand Chip -->
+<div class="px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#A8D672]"></span>
+<span class="font-caption text-[11px] font-semibold tracking-wider text-surface uppercase">Live Sync</span>
+</div>
+</div>
+<!-- Translucent Hairline Divider -->
+<div class="my-4 h-px w-full bg-white/20"></div>
+<!-- Bottom Row: Creator Earnings & Withdraw CTA -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex flex-col">
+<span class="font-label text-label text-surface/85">
+              Earnings this month <strong class="text-surface font-semibold ml-0.5">$214.60</strong>
+</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-[#160C1F]/45 hover:bg-[#160C1F]/60 transition-colors active:scale-95 duration-100 border border-white/10 flex items-center gap-1" type="button">
+<span class="font-caption text-[13px] font-semibold text-surface">Withdraw</span>
+<span class="material-symbols-outlined text-[16px] text-surface" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- SECTION: TOP UP -->
+<section class="space-y-3">
+<div class="flex items-baseline justify-between">
+<h2 class="font-title text-title text-text-primary font-semibold">Top up</h2>
+<span class="font-caption text-caption text-text-tertiary">Instant coin delivery</span>
+</div>
+<!-- 2x3 Grid of Clean White Coin Pack Cards -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Pack 1: 100 Coins -->
+<div class="bg-surface rounded-[16px] p-3.5 border border-border-hairline shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative hover:border-control-border transition-colors">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="toll">toll</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">100 coins</div>
+<button class="w-full py-1.5 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $0.99
+            </button>
+</div>
+<!-- Pack 2: 500 Coins -->
+<div class="bg-surface rounded-[16px] p-3.5 border border-border-hairline shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative hover:border-control-border transition-colors">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="toll">toll</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">500 coins</div>
+<button class="w-full py-1.5 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $4.99
+            </button>
+</div>
+<!-- Pack 3: 1,200 Coins (POPULAR BADGE & HIGHLIGHTED BORDER) -->
+<div class="bg-surface rounded-[16px] p-3.5 border-[1.5px] border-primary-container shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative">
+<!-- Popular Pill -->
+<span class="absolute -top-2.5 right-3 bg-[#A8D672] text-text-primary font-caption text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+              Popular
+            </span>
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="stars">stars</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">1,200 coins</div>
+<button class="w-full py-1.5 rounded-full bg-primary-container hover:bg-primary text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $9.99
+            </button>
+</div>
+<!-- Pack 4: 2,500 Coins -->
+<div class="bg-surface rounded-[16px] p-3.5 border border-border-hairline shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative hover:border-control-border transition-colors">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="toll">toll</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">2,500 coins</div>
+<button class="w-full py-1.5 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $19.99
+            </button>
+</div>
+<!-- Pack 5: 6,500 Coins -->
+<div class="bg-surface rounded-[16px] p-3.5 border border-border-hairline shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative hover:border-control-border transition-colors">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="toll">toll</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">6,500 coins</div>
+<button class="w-full py-1.5 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $49.99
+            </button>
+</div>
+<!-- Pack 6: 14,000 Coins -->
+<div class="bg-surface rounded-[16px] p-3.5 border border-border-hairline shadow-soft flex flex-col items-center text-center justify-between h-[126px] relative hover:border-control-border transition-colors">
+<div class="w-9 h-9 rounded-full bg-accent-tint flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="toll">toll</span>
+</div>
+<div class="font-title text-[15px] font-semibold text-text-primary">14,000 coins</div>
+<button class="w-full py-1.5 rounded-full bg-accent-fill hover:bg-accent-pressed text-surface font-label text-label font-semibold active:scale-95 transition-all" type="button">
+              $99.99
+            </button>
+</div>
+</div>
+</section>
+<!-- SECTION: RECENT ACTIVITY -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-title text-title text-text-primary font-semibold">Recent activity</h2>
+<button class="font-label text-label text-primary-container font-semibold hover:text-primary transition-colors" type="button">
+            See all
+          </button>
+</div>
+<!-- Activity Container Card -->
+<div class="bg-surface rounded-[20px] border border-border-hairline shadow-soft overflow-hidden divide-y divide-border-hairline">
+<!-- Row 1: Sent Rocket to Lena Park -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-alt/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="text-left">
+<p class="font-label text-label font-semibold text-text-primary">Sent Rocket to Lena Park</p>
+<p class="font-caption text-[12px] text-text-tertiary">Today, 2:15 PM</p>
+</div>
+</div>
+<div class="font-label text-[15px] font-semibold text-text-secondary tabular-nums">
+              -100
+            </div>
+</div>
+<!-- Row 2: Received Crown from Sofia -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-alt/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#E3F4E9] flex items-center justify-center text-success-text flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="crown">crown</span>
+</div>
+<div class="text-left">
+<p class="font-label text-label font-semibold text-text-primary">Received Crown from Sofia</p>
+<p class="font-caption text-[12px] text-text-tertiary">Yesterday, 8:40 PM</p>
+</div>
+</div>
+<div class="font-label text-[15px] font-semibold text-success-text tabular-nums">
+              +500
+            </div>
+</div>
+<!-- Row 3: Top up -->
+<div class="p-3.5 flex items-center justify-between hover:bg-surface-alt/50 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="text-left">
+<p class="font-label text-label font-semibold text-text-primary">Top up</p>
+<p class="font-caption text-[12px] text-text-tertiary">May 12, 10:14 AM</p>
+</div>
+</div>
+<div class="font-label text-[15px] font-semibold text-success-text tabular-nums">
+              +1,200
+            </div>
+</div>
+</div>
+</section>
+</div>
+<!-- SHARED BOTTOM NAVIGATION BAR -->
+<!-- Docked flat white bar with hairline top border, EXACTLY 5 tabs in fixed order: Home, Explore, Go Live, Wallet, Profile -->
+<nav class="absolute bottom-0 left-0 w-full z-40 bg-surface border-t border-border-hairline flex justify-around items-center h-16 pb-[calc(10px+env(safe-area-inset-bottom,0px))]">
+<!-- Tab 1: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Explore (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="explore">explore</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Explore</span>
+</a>
+<!-- Tab 3: Go Live (Circular Button) -->
+<a class="flex flex-col items-center justify-center -mt-3.5 group active:scale-95 transition-transform duration-100" href="#">
+<div class="w-11 h-11 rounded-full bg-accent-fill shadow-soft flex items-center justify-center text-surface group-hover:bg-accent-pressed transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="video_call">video_call</span>
+</div>
+<span class="font-caption text-[12px] leading-tight font-medium text-text-tertiary mt-1">Go Live</span>
+</a>
+<!-- Tab 4: Wallet (ACTIVE - Highlighting Current Screen) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-semibold py-1 active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[22px] font-bold" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[12px] leading-tight font-semibold mt-0.5">Wallet</span>
+</a>
+<!-- Tab 5: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary py-1 hover:text-primary transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="font-caption text-[12px] leading-tight font-medium mt-0.5">Profile</span>
+</a>
+</nav>
+<!-- Mobile Home Indicator -->
+<div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-text-primary/20 rounded-full z-50 pointer-events-none"></div>
+</main>
+</body></html>
